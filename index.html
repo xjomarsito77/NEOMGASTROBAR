@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEOM Gastrobar Food & Drink</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="container">
+    <div class="logo">
+      <img src="IMAGENES/LOGO_DEFINITIVO.jpg" alt="Logo Gastrobar" />
+    </div>
+
+    <div class="buttons">
+      <button class="btn" id="menuBtn">🍴 MENÚ</button>
+
+      <a href="https://tupagina.com/pedir" target="_blank">
+        <button class="btn">PEDIR Y RECOGERLO EN EL RESTAURANTE</button>
+      </a>
+
+      <a href="https://tupagina.com/reservar" target="_blank">
+        <button class="btn">RESERVAR UNA MESA</button>
+      </a>
+      
+      <a href="https://maps.google.com/?q=NEON+GASTROBAR" target="_blank">
+        <button class="btn">📍 UBICACIÓN</button>
+      </a>
+    </div>
+
+    <div class="social">
+      <p>Síguenos</p>
+      <div class="icons">
+        <a href="https://www.facebook.com/"><img src="IMAGENES/WHATSAP-LG.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/"><img src="IMAGENES/INSTAGRAM-LG.jpg" alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL DE MENÚ -->
+  <div class="menu-panel" id="menuPanel">
+    <div class="menu-container">
+      <aside class="sidebar">
+        <h3>Categorías</h3>
+        <ul id="categoryList">
+          <li class="active" data-category="Almuerzos">Almuerzos</li>
+          <li data-category="Asados">Asados</li>
+          <li data-category="burgers">Burgers</li>
+          <li data-category="hotdogs">Hot Dogs</li>
+          <li data-category="Licores">Licores</li>
+          <li data-category="bebidas">Bebidas</li>
+          <li data-category="postres">Postres</li>
+        </ul>
+      </aside>
+
+      <main class="menu-content">
+        <h2 id="categoryTitle">Hot Dogs</h2>
+        <div class="items" id="itemsContainer">
+          <!-- Aquí se cargan los productos dinámicamente -->
+        </div>
+      </main>
+    </div>
+    <button class="close-btn" id="closeMenu">← Volver</button>
+  </div>
+  <!-- Lottie -->
+  <script src="icons8-whatsapp.json"></script>
+  <script src="script.js"></script>
+</body>
+</html>

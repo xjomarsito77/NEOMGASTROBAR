@@ -1,0 +1,313 @@
+/* Fondo general (tú le colocas la imagen que quieras) */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('IMAGENES/FONDO_PAGINA.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .logo img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius:10PX ;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+    max-width: 350px;
+  }
+  
+  
+  .btn {
+    background: #1e1e1e;
+    border: none;
+    color: rgb(251, 251, 251);
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn:hover {
+    background: #cfa731;
+  }
+  
+  .social {
+    margin-top: 30px;
+  }
+  
+  .social p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: antiquewhite;
+  }
+  
+  .icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .icons img {
+    width: 30px;
+    filter: invert(1);
+    color: rgb(220, 134, 21);
+  }
+  
+  /* PANEL DE MENÚ */
+.menu-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: url('IMAGENES/FONDO_PAGINA.jpg') no-repeat center center fixed;
+    background-size: cover ;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+  
+  .menu-panel.show {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .menu-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 85%;
+    background: rgba(20, 20, 20, 0.95);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+  
+  .sidebar {
+  position: relative;
+  width: 25%;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+  background-image: url("IMAGENES/slider_hover.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  }
+
+  .sidebar::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* ocupa todo el sidebar */
+  background-color: rgba(0, 0, 0, 0.5); /* negro con 50% de opacidad */
+  z-index: 0;
+  }
+
+  .sidebar * {
+  position: relative;
+  z-index: 1; /* para que el contenido quede encima del overlay */
+  }
+  
+  .sidebar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  
+  .sidebar li.active,
+  .sidebar li:hover {
+    background: #c07f2bde;
+  }
+  
+  .menu-content {
+    flex: 1;
+    padding: 20px;
+    color: rgb(white);
+    overflow-y: auto;
+  }
+  
+  .items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+  }
+  
+  .item {
+    background: #222;
+    border-radius: 12px;
+    padding: 10px;
+    transition: transform 0.2s ease;
+  }
+  
+  .item:hover {
+    transform: scale(1.03);
+  }
+  
+  .item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .item-content h4 {
+    margin: 10px 0 5px;
+  }
+  
+  .price {
+    color: #f39c12;
+    font-weight: bold;
+  }
+  
+  .ver-btn {
+    margin-top: 5px;
+    background: #e74c3c;
+    border: none;
+    padding: 6px 12px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .ver-btn:hover {
+    background: #c0392b;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .close-btn:hover {
+    background: white;
+    color: black;
+  }  
+  
+  /* Responsivo */
+  @media (max-width: 600px) {
+    .btn {
+      font-size: 0.9rem;
+      padding: 12px;
+    }
+    .logo img {
+      width: 120px;
+    }
+  }
+
+  /* MODAL DE PRODUCTO */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2000;
+  }
+  
+  .modal.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .modal-content {
+    background: #111;
+    color: white;
+    padding: 20px;
+    max-width: 500px;
+    width: 90%;
+    border-radius: 16px;
+    overflow-y: auto;
+    max-height: 90vh;
+    position: relative;
+    text-align: center;
+  }
+  
+  .modal-content img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 8px;
+    font-size: 1.8rem;
+  }
+  
+  .modal-content h3 {
+    color: #f39c12;
+    margin-bottom: 10px;
+  }
+  
+  .modal-content p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
