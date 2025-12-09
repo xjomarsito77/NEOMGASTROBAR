@@ -11,7 +11,7 @@ let modal;
 const data = {
   Entradas: [
     { name: "Onion Rings", desc: "Aros de cebolla apanados y fritos hasta quedar bien crocantes. Servidos con la salsa del chef.", 
-       price: "$18.000", img: "IMAGENES/LOGO_DEFINITIVO.jpg" },
+       price: "$18.000", img: "" },
     { name: "Mozzarella Fingers", desc: "Palitos de mozzarella apanados y dorados, acompañados de salsa napolitana.", 
        price: "$22.000", img: "" },
     { name: "Mini Choripanes", desc: "pan pretzel mini , chorizo argentino y salsa criolla.", 
