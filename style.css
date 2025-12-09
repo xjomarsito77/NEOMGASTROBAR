@@ -6,9 +6,8 @@ body {
     background-size: cover;
     color: white;
     height: 100vh;
-    overflow-x: hidden;
-  }
-  
+    overflow: hidden;
+  } 
   .overlay {
     position: fixed;
     inset: 0;
@@ -25,10 +24,11 @@ body {
     text-align: center;
     gap: 20px;
     padding: 20px;
+    box-sizing: border-box;
   }
   
   .logo img {
-    width: 150px;
+    width: 320px;
     height: auto;
     margin-bottom: 20px;
     border-radius:10PX ;
@@ -97,6 +97,7 @@ body {
     opacity: 0;
     transform: translateX(-100%);
     transition: transform 0.4s ease, opacity 0.4s ease;
+    background: rgba(20, 20, 20, 0.827);
   }
   
   .menu-panel.show {
@@ -110,7 +111,7 @@ body {
     width: 90%;
     max-width: 1200px;
     height: 85%;
-    background: rgba(20, 20, 20, 0.95);
+    background: rgb(20, 20, 20);
     border-radius: 16px;
     overflow: hidden;
     backdrop-filter: blur(10px);
@@ -132,7 +133,7 @@ body {
   content: "";
   position: absolute;
   inset: 0; /* ocupa todo el sidebar */
-  background-color: rgba(0, 0, 0, 0.5); /* negro con 50% de opacidad */
+  background-color: rgba(0, 0, 0, 0.744); /* negro con 50% de opacidad */
   z-index: 0;
   }
 
