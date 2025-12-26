@@ -185,6 +185,9 @@ body {
     border-radius: 12px;
     padding: 10px;
     transition: transform 0.2s ease;
+    max-width: 100%;
+    overflow: hidden;
+
   }
   
   .item:hover {
@@ -194,11 +197,10 @@ body {
   .item img {
   width: 100%;
   height: auto;
-  max-height: 220px;
-  object-fit: contain;
-  background: #111;
+  border-radius: 10px;
+  display: block;
   }
-  
+
   .item-content h4 {
     margin: 10px 0 5px;
   }
@@ -321,7 +323,6 @@ body {
 
 @media (max-width: 768px) {
 
-  /* Panel ocupa toda la pantalla */
   .menu-panel {
     align-items: flex-start;
   }
@@ -333,7 +334,6 @@ body {
     border-radius: 0;
   }
 
-  /* Sidebar arriba */
   .sidebar {
     width: 100%;
     padding: 10px;
@@ -344,7 +344,6 @@ body {
     display: none;
   }
 
-  /* Categorías horizontales */
   .sidebar ul {
     display: flex;
     gap: 10px;
@@ -358,13 +357,11 @@ body {
     font-size: 0.85rem;
   }
 
-  /* Contenido del menú */
   .menu-content {
     padding: 15px;
     overflow-y: auto;
   }
 
-  /* Grid perfecto en móvil */
   .items {
     grid-template-columns: 1fr;
   }
@@ -373,12 +370,6 @@ body {
     padding: 12px;
   }
 
-  .item img {
-    max-height: 180px;
-    object-fit: cover;
-  }
-
-  /* Botón volver fijo */
   .close-btn {
     position: fixed;
     top: 10px;
@@ -387,3 +378,4 @@ body {
     background: rgba(0,0,0,0.7);
   }
 }
+
