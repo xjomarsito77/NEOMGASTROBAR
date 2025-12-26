@@ -11,7 +11,7 @@ let modal;
 const data = {
   Entradas: [
     { name: "Onion Rings", desc: "Aros de cebolla apañados acompañados con salsa del chef.", 
-       price: "$20.000", img: "IMAGENES/LOGO_DEFINITIVO.jpg" },
+       price: "$20.000", img: "" },
     { name: "Mozzarella Fingers", desc: "Palitos de queso apañados acompañados con salsa napolitana.", 
        price: "$24.000", img: "" },
     { name: "Mini Choripanes", desc: "Pan pretzel mini , chorizo argentino y salsa criolla.", 
