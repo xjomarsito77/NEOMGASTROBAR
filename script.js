@@ -35,13 +35,13 @@ const data = {
     { name: "Ronda de Tacos", desc: "Tacos realizados con nuestros mejores ingredientes de nuestro menú (carne asada, chorizo, pollo crispy , cochinita pibill).", 
        price: "$53.000", img: "" },
   ],
- //Almuerzos: [
-   // { name: "Pechuga a la plancha", desc: "Acompañada de arroz, papas criollas y ensalada fresca.", 
-   //   price: "$0", img: "almuerzo1.jpg" },
-   // { name: "Lomo en salsa de champiñones", desc: "Corte de res en salsa cremosa con papas y ensalada.", 
-   //   price: "$0", img: "almuerzo2.jpg" }
-  //],
- CORTES_CARNES: [
+  ALMUERZOS: [
+    { name: "Pechuga a la plancha", desc: "Acompañada de arroz, papas criollas y ensalada fresca.", 
+      price: "$0", img: "" },
+    { name: "Lomo en salsa de champiñones", desc: "Corte de res en salsa cremosa con papas y ensalada.", 
+      price: "$0", img: "" }
+  ],
+  CORTES_CARNES: [
     { name: "Pechuga de Pollo", desc: "",
        price: "$36.000", img: "" },
     { name: "Lomo de Cerdo", desc: "",
@@ -65,7 +65,7 @@ const data = {
     { name: "Parrillada Mixta 3", desc: "Chicharrón, chorizo antioqueño, butifarra soledeña, bollo limpio, salchicha ranchera glaseada en teriyaki y costilla de cerdo BBQ",
      price: "$75.000", img: "" },
   ],
- BURGERS: [
+  BURGERS: [
     { name: "Crispy Chicken César Sandwich", desc: "Pan pretzel, salsa de ajo , mix de lechugas en su vinagreta , parmesano , queso Mozzarella y pechuga de pollo apanada.", 
       price: "$30.000", img: "" },
     { name: "Cheese Bacon Burger", desc: "Pan de pretzel , carne angus , doble tocineta, doble cheddar, cebolla fresca y pepinillos.", 
@@ -79,7 +79,7 @@ const data = {
     { name: "Whopper Pretzel", desc: "Pan de pretzel ; salsa del chef , carne angus, queso Cheddar , Mozzarella apanado cebolla caramelizada , tocineta y miel .", 
       price: "$39.000", img: "" },
   ],
- Sandwiches: [
+  SANDWICHES: [
     {name: "Sándwich de Pork Belly", desc: "Pan de pretzel , tocino barriguero, salsa de ajo, cebolla encurtida.",
        price: "$30.000", img: ""},
     { name: "Sándwich de Lomo", desc: "Lomo fino salteado con cebolla grille y greavy de caldo de carne y cebolla crispy.",
@@ -173,27 +173,40 @@ categoryList.addEventListener('click', e => {
   }
 });
 
-// 🔥 Abrir menú (CORREGIDO)
+// 🔥 Abrir menú (CORRECTO Y LIMPIO)
 menuBtn.addEventListener('click', () => {
-  menuPanel.style.display = 'flex';
-  setTimeout(() => menuPanel.classList.add('show'), 10);
+    menuPanel.style.display = 'flex';
+
+  // Forzar render inicial
+   menuPanel.offsetHeight;
+
+  // Activar animación
+   menuPanel.classList.add('show');
+
+  // Render inicial
+   renderCategory('Entradas');
+
+  document.querySelectorAll('.sidebar li').forEach(li => {
+    li.classList.toggle('active', li.dataset.category === 'Entradas');
+  });
+
+  history.pushState(null, '', '#menu');});
 
   // Mostrar Entradas por defecto
   renderCategory('Entradas');
 
-  // Activar visualmente el botón de Entradas
-  document.querySelectorAll('.sidebar li').forEach(li => {
+// Activar visualmente el botón de Entradas
+document.querySelectorAll('.sidebar li').forEach(li => {
     if (li.dataset.category === 'Entradas') li.classList.add('active');
     else li.classList.remove('active');
   });
 
   history.pushState(null, '', '#menu');
-});
 
 // Cerrar menú
 closeMenu.addEventListener('click', () => {
   menuPanel.classList.remove('show');
-  setTimeout(() => (menuPanel.style.display = 'none'), 900);
+  setTimeout(() => (menuPanel.style.display = 'none'), 400);
   history.back();
 });
 
@@ -201,7 +214,7 @@ closeMenu.addEventListener('click', () => {
 window.addEventListener('popstate', () => {
   if (menuPanel.classList.contains('show')) {
     menuPanel.classList.remove('show');
-    setTimeout(() => (menuPanel.style.display = 'none'), 900);
+    setTimeout(() => (menuPanel.style.display = 'none'), 400);
   }
 });
 
