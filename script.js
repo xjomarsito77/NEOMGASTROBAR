@@ -95,12 +95,12 @@ const data = {
 //    { name: "Suizo Garage", desc: "Salchicha suiza, queso mozzarella, polvo de tocineta, salsa de la casa y pan artesanal.", price: "$0", img: "hotdog3.jpg" }
 // ],
   bebidas: [
-    { name: "Gaseosa", desc: "Coca-Cola, Sprite, Pepsi u otras opciones.", price: "$0", img: "bebida1.jpg" },
-    { name: "Limonada natural", desc: "Refrescante y hecha al momento.", price: "$0", img: "bebida2.jpg" }
+    { name: "Gaseosa", desc: "Coca-Cola, Sprite, Pepsi u otras opciones.", price: "$0", img: "" },
+    { name: "Limonada natural", desc: "Refrescante y hecha al momento.", price: "$0", img: "" }
   ],
   Licores: [
-    { name: "Cerveza artesanal", desc: "Variedades locales y de importación.", price: "$0", img: "licor1.jpg" },
-    { name: "Whisky", desc: "Por copa o botella, selección premium.", price: "$0", img: "licor2.jpg" }
+    { name: "Cerveza artesanal", desc: "Variedades locales y de importación.", price: "$0", img: "" },
+    { name: "Whisky", desc: "Por copa o botella, selección premium.", price: "$0", img: "" }
   ],
   //postres: [
   //  { name: "Brownie con helado", desc: "Brownie caliente con bola de helado de vainilla.", price: "$0", img: "postre1.jpg" },

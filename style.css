@@ -290,60 +290,59 @@ body {
 ========================= */
 @media (max-width: 768px) {
 
-  body {
-    background-size: contain;
-    background-attachment: scroll;
-  }
-
-  .menu-panel {
-    align-items: flex-start;
-    background-size: contain;
-    background-attachment: scroll;
-  }
-
+  /* Contenedor principal: mantiene layout */
   .menu-container {
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     height: 100%;
     border-radius: 0;
   }
 
+  /* Sidebar SIEMPRE a la izquierda */
   .sidebar {
-    width: 100%;
+    width: 35%;
+    min-width: 35%;
     padding: 10px;
-    overflow-x: auto;
+    overflow-y: auto;
   }
 
   .sidebar h3 {
-    display: none;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
   }
 
   .sidebar ul {
-    display: flex;
-    gap: 10px;
-    white-space: nowrap;
-    overflow-x: auto;
+    display: block;
   }
 
   .sidebar li {
-    flex: 0 0 auto;
-    padding: 10px 14px;
     font-size: 0.85rem;
+    padding: 10px;
   }
 
+  /* Contenido */
   .menu-content {
-    padding: 15px;
+    padding: 12px;
+    overflow-y: auto;
   }
 
+  /* Cards */
   .items {
     grid-template-columns: 1fr;
   }
 
+  .item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Botón cerrar */
   .close-btn {
     position: fixed;
     top: 10px;
     left: 10px;
-    background: rgba(0,0,0,0.7);
     z-index: 3000;
+    background: rgba(0,0,0,0.6);
   }
 }
