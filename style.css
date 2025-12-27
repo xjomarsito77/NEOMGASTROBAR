@@ -350,7 +350,7 @@ body {
     overflow-y: auto; /* scroll SOLO aquí */
   }
 
-  .modal h3{
+  .modal .price{
     color:#f39c12;
   }
 
@@ -364,19 +364,30 @@ body {
     height: auto;
     object-fit: cover;
   }
+  /* Botón cerrar MODAL (❌) en móvil */
+  .close-modal {
+   position: absolute;
+   top: 12px;
+   right: 12px;
+
+   background: none;
+   border: none;
+   font-size: 1.6rem;
+   color: white;
+   cursor: pointer;
+   line-height: 1;
+   z-index: 10;
+  }
 
   /* Botón cerrar */
   .close-btn {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-
-    background: none;
-    border: none;
-    font-size: 1.6rem;
-    color: white;
-    cursor: pointer;
-    line-height: 1;
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    top: auto;          /* importante */
+    z-index: 3000;
+    background: rgba(0,0,0,0.7);
+    padding: 8px 16px;
   }
 
 }
