@@ -366,25 +366,24 @@ body {
   }
   /* Botón cerrar MODAL (❌) en móvil */
   .close-modal {
-   position: absolute;
-   top: 12px;
-   right: 12px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
 
-   background: none;
-   border: none;
-   font-size: 1.6rem;
-   color: white;
-   cursor: pointer;
-   line-height: 1;
-   z-index: 10;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: white;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 10;
   }
 
-  /* Botón cerrar */
   .close-btn {
-    position: fixed;
+    position: absolute;
     bottom: 15px;
     left: 15px;
-    top: auto;          /* importante */
+    top: auto;
     z-index: 3000;
     background: rgba(0,0,0,0.7);
     padding: 8px 16px;
