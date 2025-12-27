@@ -288,9 +288,25 @@ body {
 /* =========================
    RESPONSIVE MÓVIL (CLAVE)
 ========================= */
+/* =========================
+   RESPONSIVE MÓVIL (SIN SCROLL INICIO)
+========================= */
 @media (max-width: 768px) {
 
-  /* Contenedor principal: mantiene layout */
+  /* BLOQUEA SCROLL EN EL INICIO */
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* El contenedor principal ocupa toda la pantalla */
+  .container {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ================= MENU ================= */
+
   .menu-container {
     flex-direction: row;
     width: 100%;
@@ -298,12 +314,12 @@ body {
     border-radius: 0;
   }
 
-  /* Sidebar SIEMPRE a la izquierda */
+  /* Sidebar a la izquierda */
   .sidebar {
     width: 35%;
     min-width: 35%;
     padding: 10px;
-    overflow-y: auto;
+    overflow-y: auto; /* scroll SOLO aquí */
   }
 
   .sidebar h3 {
@@ -320,10 +336,10 @@ body {
     padding: 10px;
   }
 
-  /* Contenido */
+  /* Contenido con scroll */
   .menu-content {
     padding: 12px;
-    overflow-y: auto;
+    overflow-y: auto; /* scroll SOLO aquí */
   }
 
   /* Cards */
