@@ -35,12 +35,18 @@ const data = {
     { name: "Ronda de Tacos", desc: "Tacos realizados con nuestros mejores ingredientes de nuestro menú (carne asada, chorizo, pollo crispy , cochinita pibill).", 
        price: "$53.000", img: "" },
   ],
+
   ALMUERZOS: [
-    { name: "Pechuga a la plancha", desc: "Acompañada de arroz, papas criollas y ensalada fresca.", 
-      price: "$0", img: "" },
-    { name: "Lomo en salsa de champiñones", desc: "Corte de res en salsa cremosa con papas y ensalada.", 
-      price: "$0", img: "" }
+    { name: "Pollo saltado ", desc: "Arroz oriental base , pechuga de pollo, cebolla en casco , tomate en casco , papas a la francesa.", 
+       price: "$28.000", img: "" },
+    { name: "Lomo saltado", desc: "Arroz oriental base , lomo fino de res , papas a la francesa , tomate en casco , cebolla en casco , salsa de soya. ", 
+       price: "$29.000", img: "" },
+    { name: "Arroz cremoso con suprema de pollo", desc: " Arroz cremoso base , tocineta , queso parmesano , champiñones, pechuga de pollo entera.", 
+       price: "$31.000", img: "" },
+    { name: "Arroz cremoso de lomo ", desc: " arroz cremoso  a base de tocineta y champiñones queso parmesano , champiñones y lomo de res.", 
+       price: "$33.000", img: "" }
   ],
+
   CORTES_CARNES: [
     { name: "Pechuga de Pollo", desc: "",
        price: "$36.000", img: "" },
@@ -57,14 +63,16 @@ const data = {
     { name: "Rib Eye", desc: "",
        price: "$96.000", img: "" },
   ],
+
   COMPARTIR: [
     { name: "Parrillada Mixta 1", desc: "Tenders de pollo, papas a la francesa, mozzarella fingers, aros de cebolla y mini empanaditas de carne desmechada.",
-     price: "$65.000", img: "" },
+     price: "$68.000", img: "" },
     { name: "Parrillada Mixta 2", desc: "Lomo fino, chicharrón crocante, pechuga de pollo, chorizo antioqueño, papas a la francesa y costillas BBQ.",
-     price: "$70.000", img: "" },
+     price: "$73.000", img: "" },
     { name: "Parrillada Mixta 3", desc: "Chicharrón, chorizo antioqueño, butifarra soledeña, bollo limpio, salchicha ranchera glaseada en teriyaki y costilla de cerdo BBQ",
-     price: "$75.000", img: "" },
+     price: "$78.000", img: "" },
   ],
+
   BURGERS: [
     { name: "Crispy Chicken César Sandwich", desc: "Pan pretzel, salsa de ajo , mix de lechugas en su vinagreta , parmesano , queso Mozzarella y pechuga de pollo apanada.", 
       price: "$30.000", img: "" },
@@ -72,36 +80,124 @@ const data = {
       price: "$30.000", img: "" },
     { name: "Choriburger", desc: "Blend completamente de carne chorizo artesanal ; mayonesa de chipotle, queso provolone, vegetales frescos", 
       price: "$32.000", img: "" },
-    { name: "Spicy & Sweet", desc: "Pan pretzel ; salsa mayo Spicy , pimentones caramelizados, vegetales frescos , queso gouda.", 
+    { name: "Spicy & Sweet", desc: "Pan pretzel , salsa mayo Spicy , pimentones caramelizados, vegetales frescos , queso gouda.", 
       price: "$34.000", img: "" },
-    { name: "Burger Mac & Cheese", desc: "Pan de pretzel, salsa del chef , carne angus, tocineta ; mc and chesse trufado del chef.", 
+    { name: "Burger Mac & Cheese", desc: "Pan de pretzel, salsa del chef , carne angus, tocineta , mc and chesse trufado del chef.", 
       price: "$37.000", img: "" },
-    { name: "Whopper Pretzel", desc: "Pan de pretzel ; salsa del chef , carne angus, queso Cheddar , Mozzarella apanado cebolla caramelizada , tocineta y miel .", 
+    { name: "Whopper Pretzel", desc: "Pan de pretzel , salsa del chef , carne angus, queso Cheddar , Mozzarella apanado cebolla caramelizada , tocineta y miel .", 
       price: "$39.000", img: "" },
   ],
+
   SANDWICHES: [
     {name: "Sándwich de Pork Belly", desc: "Pan de pretzel , tocino barriguero, salsa de ajo, cebolla encurtida.",
        price: "$30.000", img: ""},
     { name: "Sándwich de Lomo", desc: "Lomo fino salteado con cebolla grille y greavy de caldo de carne y cebolla crispy.",
        price: "$34.000", img: "" },
-    { name: "Club Sándwich", desc: "Pechuga de pollo al grill, salsa del chef, jamón de pavo , queso Mozzarella , provolone, vegetales frescos , mantequilla de hierbas .",
+    { name: "Club Sándwich", desc: "Pechuga de pollo al grill , salsa del chef, jamón de pavo , queso Mozzarella , provolone, vegetales frescos , mantequilla de hierbas .",
        price: "$37.000", img: "" },
   ],
-  //hotdogs: [
-//    { name: "Sweet Bacon", desc: "Salchicha premium, queso americano fundido, cebolla caramelizada, polvo de tocineta, cebolla blanca, mayo ahumada y pan artesanal. Todos nuestros hot dogs vienen acompañados de papas a la francesa y salsa de la casa.", 
-//    price: "$0", img: "IMAGENES/LOGO.jpg" },
-//
-//    { name: "Pulled Pork", desc: "Salchicha premium, pulled pork en salsa BBQ, mayo ahumada y pan artesanal.", price: "$0", img: "hotdog2.jpg" },
-//    { name: "Suizo Garage", desc: "Salchicha suiza, queso mozzarella, polvo de tocineta, salsa de la casa y pan artesanal.", price: "$0", img: "hotdog3.jpg" }
-// ],
+
+  KIDS: [
+    { name: "Chiken tenders", desc: "Tornados apanado acompañado de papas a la francesa salsa de tomate y juguito.", 
+       price: "$0", img: "" },
+    { name: "Cheese burger", desc: "Carne de res premium queso americano pan artesanal  y salsa de tomate acompañado de papas a la francesa y juguito.",
+       price: "$0", img: "" },
+  ],
+
   bebidas: [
-    { name: "Gaseosa", desc: "Coca-Cola, Sprite, Pepsi u otras opciones.", price: "$0", img: "" },
-    { name: "Limonada natural", desc: "Refrescante y hecha al momento.", price: "$0", img: "" }
+    { name: "Agua", desc: "",  price: "$7.500", img: "" },
+    { name: "Soda Bretaña", desc: "", price: "$8.900", img: "" },
+    { name: "Gaseosa", desc: "", price: "$8.900", img: "" },
+    { name: "Ginger Canada Dry", desc: "", price: "$8.900", img: "" },
+    { name: "Soda Hatsu", desc: "", price: "$10.900", img: "" },
+    { name: "Te Hatsu", desc: "", price: "$10.900", img: "" },
+    { name: "Jugo de Mandarina", desc: "", price: "$11.900", img: "" },
+    { name: "Limonada Cerezada", desc: "", price: "$11.900", img: "" },
+    { name: "Limonada Coco", desc: "", price: "$11.900", img: "" },
+    { name: "Limonada Hierbabuena", desc: "", price: "$11.900", img: "" },
+    { name: "Soda Frutos rojos", desc: "", price: "$18.900", img: "" },
+    { name: "Soda Frutos Amarillos", desc: "", price: "$18.900", img: "" },
+    { name: "Soda de Lyche", desc: "", price: "$18.900", img: "" },
+    { name: "Red Bull", desc: "", price: "$15.900", img: "" },
+    { name: "Red Bull Suggarfree", desc: "", price: "$15.900", img: "" },
+    { name: "Red Bull edittion red", desc: "", price: "$15.900", img: "" },
+    { name: "Gatorade", desc: "", price: "$11.900", img: "" },
+
   ],
-  Licores: [
-    { name: "Cerveza artesanal", desc: "Variedades locales y de importación.", price: "$0", img: "" },
-    { name: "Whisky", desc: "Por copa o botella, selección premium.", price: "$0", img: "" }
+
+  CERVEZAS: [
+    { name: "Costeñita", desc: "", price: "$7.900", img: "" },
+    { name: "Budweiser", desc: "", price: "$9.900", img: "" },
+    { name: "Club Colombia", desc: "", price: "$10.900", img: "" },
+    { name: "Heiniken", desc: "", price: "$12.900", img: "" },
+    { name: "Corona", desc: "", price: "$13.900", img: "" },
+    { name: "Stella", desc: "", price: "$14.900", img: "" },
+    { name: "Smirnoff", desc: "", price: "$15.900", img: "" },
   ],
+
+  COCTEL: [
+    { name: "Margarita", desc: "", price: "$28.000", img: "" },
+    { name: "Tom Collins", desc: "", price: "$28.000", img: "" },
+    { name: "Mojito", desc: "", price: "$30.000", img: "" },
+    { name: "Piña Colada", desc: "", price: "$35.000", img: "" },
+    { name: "Moscuw mule", desc: "", price: "$38.000", img: "" },
+    { name: "Cóctel Neom", desc: "", price: "$40.000", img: "" },
+  ],
+
+  VINOS: [
+    { name: "Copa vino tinto", desc: "", price: "$32.900", img: "" },
+    { name: "Copa vino blanco", desc: "", price: "$32.900", img: "" },
+    { name: "Copa vino rosado", desc: "", price: "$32.900", img: "" },
+    { name: "Botella vino tinto", desc: "", price: "$130.000", img: "" },
+    { name: "Botella vino blanco", desc: "", price: "$130.000", img: "" },
+    { name: "Botella vino rosado", desc: "", price: "$130.000", img: "" },
+  ],
+
+  AGUARDIENTES: [
+    { name: "Aguardiente tapa azul", desc: "", price: "$200.000", img: "" },
+    { name: "Aguardiente tapa verde", desc: "", price: "$200.000", img: "" },
+    { name: "Aguardiente amarillo", desc: "", price: "$220.000", img: "" },
+  ],
+
+  WISKY: [
+    { name: "Buchana Deluxe 12 años 750ml", desc: "", price: "$340.000", img: "" },
+    { name: "Buchana Máster 750ml", desc: "", price: "$390.000", img: "" },
+    { name: "Buchana 10 años 750ml", desc: "", price: "$650.000", img: "" },
+    { name: "Old parr 12 años 750ml", desc: "", price: "$330.000", img: "" },
+    { name: "Wisky Black Label", desc: "", price: "$330.000", img: "" },
+    { name: "Wisky de Glenlivet", desc: "", price: "$320.000", img: "" },
+    { name: "Wisky Gold Label ", desc: "", price: "$650.000", img: "" },
+    { name: "Wisky Jack Daniel", desc: "", price: "$300.000", img: "" },
+  ],
+
+  RON: [
+    { name: "Ron Medellín 12 años", desc: "", price: "$200.000", img: "" },
+    { name: "Ron Zacapa 12 años", desc: "", price: "$320.000", img: "" },
+    { name: "Ron la Hechicera", desc: "", price: "$340.000", img: "" },
+  ],
+
+  GINEBRAS: [
+    { name: "José Kuervo 750ml", desc: "", price: "$250.000", img: "" },
+    { name: "Ginebra Tanquerai 750ml", desc: "", price: "$300.000", img: "" },
+    { name: "Ginebra Hendriks 750ml", desc: "", price: "$470.000", img: "" },
+  ],
+
+  TEQUILAS: [
+    { name: "Tequila Patrón cristalino", desc: "", price: "$450.000", img: "" },
+    { name: "Tequila 1.800 reposado 750ml", desc: "", price: "$450.000", img: "" },
+    { name: "Don Julio blanco", desc: "", price: "$470.000", img: "" },
+    { name: "Don Julio reposado", desc: "", price: "$490.000", img: "" },
+    { name: "Don Julio 70", desc: "", price: "$650.000", img: "" },
+  ],
+
+  ADICIONALES: [
+    { name: "Michelado", desc: "", price: "$3.000", img: "" },
+    { name: "Aros de cebolla", desc: "", price: "$8.900", img: "" },
+    { name: "Papas a la francesa", desc: "", price: "$9.000", img: "" },
+    { name: "Papas casco", desc: "", price: "$9.000", img: "" },
+    { name: "Chorizo argentino", desc: "", price: "$10.900", img: "" },
+  ]
+
   //postres: [
   //  { name: "Brownie con helado", desc: "Brownie caliente con bola de helado de vainilla.", price: "$0", img: "postre1.jpg" },
   //  { name: "Cheesecake de frutos rojos", desc: "Base de galleta y salsa de frutos rojos frescos.", price: "$0", img: "postre2.jpg" }
