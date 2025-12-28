@@ -62,6 +62,7 @@ body {
   height: auto;
   margin-bottom: 20px;
   border-radius: 10px;
+  margin-top: 6px;
 }
 
 /* =========================
@@ -344,6 +345,10 @@ body {
   body {
     overflow: hidden;
     padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .logo{
+    margin-top: 6px;
   }
 
   .container {
