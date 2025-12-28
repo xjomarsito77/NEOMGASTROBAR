@@ -1,36 +1,62 @@
 /* =========================
-   ESTILOS GENERALES
+   RESET + BASE
 ========================= */
-body {
+html, body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: url('IMAGENES/LOGO_DEFINITIVO_COM.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-  min-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
+  padding: 0;
 }
 
+/* =========================
+   BODY + FONDO (FIX iOS)
+========================= */
+body {
+  font-family: 'Poppins', sans-serif;
+
+  background: url('IMAGENES/LOGO_DEFINITIVO_COM.jpg') no-repeat center center;
+  background-size: cover;
+
+  color: white;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  overflow-x: hidden;
+}
+
+/* =========================
+   OVERLAY
+========================= */
 .overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
-  z-index: -1;
+  z-index: 0;
 }
 
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
 .container {
+  position: relative;
+  z-index: 1;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   min-height: 100vh;
+  min-height: 100dvh;
+
   text-align: center;
   gap: 20px;
   padding: 20px;
   box-sizing: border-box;
 }
 
+/* =========================
+   LOGO
+========================= */
 .logo img {
   width: 320px;
   height: auto;
@@ -38,6 +64,9 @@ body {
   border-radius: 10px;
 }
 
+/* =========================
+   BOTONES
+========================= */
 .buttons {
   display: flex;
   flex-direction: column;
@@ -54,13 +83,17 @@ body {
   border-radius: 50px;
   font-size: 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .btn:hover {
   background: #cfa731;
+  transform: scale(1.02);
 }
 
+/* =========================
+   SOCIAL
+========================= */
 .social {
   margin-top: 30px;
 }
@@ -90,9 +123,11 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
-  background: url('IMAGENES/LOGO_DEFINITIVO_COM.jpg') no-repeat center center fixed;
+
+  background: url('IMAGENES/LOGO_DEFINITIVO_COM.jpg') no-repeat center center;
   background-size: cover;
   background-color: rgba(20, 20, 20, 0.85);
+
   z-index: 999;
   opacity: 0;
   transform: translateX(-100%);
@@ -106,6 +141,9 @@ body {
   overflow: hidden;
 }
 
+/* =========================
+   CONTENEDOR MENÚ
+========================= */
 .menu-container {
   display: flex;
   width: 90%;
@@ -114,7 +152,6 @@ body {
   background: #141414;
   border-radius: 16px;
   overflow: hidden;
-  
 }
 
 /* =========================
@@ -125,29 +162,19 @@ body {
   width: 25%;
   padding: 20px;
   overflow-y: auto;
+
   background: url("IMAGENES/sliderofi.jpg") no-repeat center center;
   background-size: cover;
-}
-
-.sidebar::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  height: auto ;
-  
 }
 
 .sidebar * {
   position: relative;
   z-index: 1;
-  height: auto;
 }
 
 .sidebar h3 {
   position: sticky;
-  top: 10px;                 /* un poco separado del borde */
-  z-index: 20;
+  top: 10px;
 
   margin: 0 10px 15px;
   padding: 12px 16px;
@@ -155,11 +182,11 @@ body {
   text-align: center;
   font-size: 1.05rem;
   font-weight: 600;
+
+  background: #c0392b;
   color: white;
 
-  background: #c0392b;     /* MISMO COLOR QUE ENTRADAS */
   border-radius: 14px;
-
   box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
 
@@ -167,7 +194,6 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
-  height: auto;
 }
 
 .sidebar li {
@@ -176,7 +202,6 @@ body {
   text-align: center;
   cursor: pointer;
   transition: background 0.3s;
-  height: auto;
 }
 
 .sidebar li.active,
@@ -204,7 +229,6 @@ body {
   border-radius: 12px;
   padding: 10px;
   transition: transform 0.2s ease;
-  overflow: hidden;
 }
 
 .item:hover {
@@ -241,6 +265,9 @@ body {
   background: #c0392b;
 }
 
+/* =========================
+   BOTÓN CERRAR MENÚ
+========================= */
 .close-btn {
   position: absolute;
   top: 25px;
@@ -260,9 +287,11 @@ body {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.8);
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   opacity: 0;
   transform: scale(0.95);
   transition: 0.3s;
@@ -274,15 +303,14 @@ body {
   transform: scale(1);
 }
 
-
 .modal-content {
-  position: relative; /* CLAVE */
+  position: relative;
   background: #111;
   padding: 20px;
   max-width: 500px;
   width: 90%;
   border-radius: 16px;
-  max-height: 90vh;
+  max-height: 90dvh;
   overflow-y: auto;
   text-align: center;
 }
@@ -293,48 +321,34 @@ body {
   margin-bottom: 15px;
 }
 
-.modal h3{
-  color:#f39c12;
+.modal h3 {
+  color: #f39c12;
 }
 
 .close-modal {
   position: absolute;
   top: 14px;
   right: 14px;
-
   background: none;
   border: none;
   font-size: 1.6rem;
   color: white;
   cursor: pointer;
-  line-height: 1;
-}
-
-#categoryTitle {
-  display: none;
 }
 
 /* =========================
-   RESPONSIVE MÓVIL (CLAVE)
-========================= */
-/* =========================
-   RESPONSIVE MÓVIL (SIN SCROLL INICIO)
+   RESPONSIVE MÓVIL
 ========================= */
 @media (max-width: 768px) {
 
-  /* BLOQUEA SCROLL EN EL INICIO */
   body {
-    height: 100vh;
     overflow: hidden;
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
-  /* El contenedor principal ocupa toda la pantalla */
   .container {
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100dvh;
   }
-
-  /* ================= MENU ================= */
 
   .menu-container {
     flex-direction: row;
@@ -343,12 +357,10 @@ body {
     border-radius: 0;
   }
 
-  /* Sidebar a la izquierda */
   .sidebar {
     width: 35%;
     min-width: 35%;
     padding: 10px;
-    overflow-y: auto; /* scroll SOLO aquí */
   }
 
   .sidebar h3 {
@@ -357,48 +369,17 @@ body {
     padding: 10px 14px;
   }
 
-  .sidebar ul {
-    display: block;
-  }
-
   .sidebar li {
     font-size: 0.85rem;
     padding: 10px;
   }
 
-  /* Contenido con scroll */
   .menu-content {
     padding: 12px;
-    overflow-y: auto; /* scroll SOLO aquí */
   }
 
-  .modal .price{
-    color:#f39c12;
-  }
-
-  /* Cards */
   .items {
     grid-template-columns: 1fr;
-  }
-
-  .item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  /* Botón cerrar MODAL (❌) en móvil */
-  .close-modal {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-
-    background: none;
-    border: none;
-    font-size: 1.6rem;
-    color: white;
-    cursor: pointer;
-    line-height: 1;
-    z-index: 10;
   }
 
   .close-btn {
@@ -406,9 +387,11 @@ body {
     bottom: 15px;
     left: 15px;
     top: auto;
-    z-index: 3000;
     background: rgba(0,0,0,0.7);
     padding: 8px 16px;
   }
-
 }
+#categoryTitle {
+  display: none !important;
+}
+
