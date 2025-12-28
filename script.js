@@ -204,6 +204,17 @@ const data = {
   //]
 };
 // ===============================
+// RESET SCROLL (SIDEBAR + CONTENIDO)
+// ===============================
+function resetMobileScroll() {
+  const sidebar = document.querySelector('.sidebar');
+  const menuContent = document.querySelector('.menu-content');
+
+  if (sidebar) sidebar.scrollTop = 0;
+  if (menuContent) menuContent.scrollTop = 0;
+}
+
+// ===============================
 // RENDERIZAR CATEGORÍA
 // ===============================
 function renderCategory(cat) {
@@ -224,6 +235,9 @@ function renderCategory(cat) {
     `
     )
     .join('');
+
+  // 🔥 Siempre volver arriba al renderizar
+  resetMobileScroll();
 }
 
 // ===============================
@@ -262,9 +276,7 @@ function closeModal() {
 // ===============================
 itemsContainer.addEventListener('click', e => {
   if (e.target.classList.contains('ver-btn')) {
-    const cat = e.target.dataset.cat;
-    const i = e.target.dataset.index;
-    openModal(cat, i);
+    openModal(e.target.dataset.cat, e.target.dataset.index);
   }
 });
 
@@ -278,13 +290,7 @@ categoryList.addEventListener('click', e => {
     );
 
     e.target.classList.add('active');
-    const cat = e.target.dataset.category;
-
-    renderCategory(cat);
-
-    // 🔥 RESET SCROLL AL CAMBIAR CATEGORÍA
-    const menuContent = document.querySelector('.menu-content');
-    menuContent.scrollTop = 0;
+    renderCategory(e.target.dataset.category);
   }
 });
 
@@ -294,12 +300,8 @@ categoryList.addEventListener('click', e => {
 menuBtn.addEventListener('click', () => {
   menuPanel.style.display = 'flex';
 
-  // 🔥 RESET SCROLL AL ABRIR MENÚ
-  const sidebar = document.querySelector('.sidebar');
-  const menuContent = document.querySelector('.menu-content');
-
-  sidebar.scrollTop = 0;
-  menuContent.scrollTop = 0;
+  // 🔥 Reset ANTES de mostrar
+  resetMobileScroll();
 
   // Forzar render
   menuPanel.offsetHeight;
@@ -307,7 +309,7 @@ menuBtn.addEventListener('click', () => {
   // Animación
   menuPanel.classList.add('show');
 
-  // Render inicial
+  // Categoría inicial
   renderCategory('Entradas');
 
   document.querySelectorAll('.sidebar li').forEach(li => {
@@ -335,6 +337,5 @@ window.addEventListener('popstate', () => {
     setTimeout(() => (menuPanel.style.display = 'none'), 400);
   }
 });
-
 
 
