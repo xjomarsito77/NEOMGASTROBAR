@@ -348,7 +348,7 @@ body {
   }
 
   .logo{
-    margin-top: 6px;
+    margin-top: 1.5px;
   }
 
   .container {
@@ -394,6 +394,8 @@ body {
     top: auto;
     background: rgba(0,0,0,0.7);
     padding: 8px 16px;
+    z-index: 9999;
+    pointer-events: auto;
   }
 }
 #categoryTitle {
