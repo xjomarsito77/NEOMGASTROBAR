@@ -203,10 +203,12 @@ const data = {
   //  { name: "Cheesecake de frutos rojos", desc: "Base de galleta y salsa de frutos rojos frescos.", price: "$0", img: "postre2.jpg" }
   //]
 };
-
-// Renderizar categoría
+// ===============================
+// RENDERIZAR CATEGORÍA
+// ===============================
 function renderCategory(cat) {
   categoryTitle.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+
   itemsContainer.innerHTML = data[cat]
     .map(
       (item, i) => `
@@ -224,9 +226,12 @@ function renderCategory(cat) {
     .join('');
 }
 
-// Abrir modal del producto
+// ===============================
+// MODAL PRODUCTO
+// ===============================
 function openModal(cat, i) {
   const item = data[cat][i];
+
   modal = document.createElement('div');
   modal.classList.add('modal');
   modal.innerHTML = `
@@ -238,8 +243,10 @@ function openModal(cat, i) {
       <p>${item.desc}</p>
     </div>
   `;
+
   document.body.appendChild(modal);
   setTimeout(() => modal.classList.add('show'), 10);
+
   document.querySelector('.close-modal').addEventListener('click', closeModal);
 }
 
@@ -250,7 +257,9 @@ function closeModal() {
   }
 }
 
-// Evento: Ver producto
+// ===============================
+// EVENTO VER PRODUCTO
+// ===============================
 itemsContainer.addEventListener('click', e => {
   if (e.target.classList.contains('ver-btn')) {
     const cat = e.target.dataset.cat;
@@ -259,59 +268,73 @@ itemsContainer.addEventListener('click', e => {
   }
 });
 
-// Cambiar categoría
+// ===============================
+// CAMBIAR CATEGORÍA
+// ===============================
 categoryList.addEventListener('click', e => {
   if (e.target.tagName === 'LI') {
-    document.querySelectorAll('.sidebar li').forEach(li => li.classList.remove('active'));
+    document.querySelectorAll('.sidebar li').forEach(li =>
+      li.classList.remove('active')
+    );
+
     e.target.classList.add('active');
     const cat = e.target.dataset.category;
+
     renderCategory(cat);
+
+    // 🔥 RESET SCROLL AL CAMBIAR CATEGORÍA
+    const menuContent = document.querySelector('.menu-content');
+    menuContent.scrollTop = 0;
   }
 });
 
-// 🔥 Abrir menú (CORRECTO Y LIMPIO)
+// ===============================
+// ABRIR MENÚ
+// ===============================
 menuBtn.addEventListener('click', () => {
-    menuPanel.style.display = 'flex';
+  menuPanel.style.display = 'flex';
 
-  // Forzar render inicial
-   menuPanel.offsetHeight;
+  // 🔥 RESET SCROLL AL ABRIR MENÚ
+  const sidebar = document.querySelector('.sidebar');
+  const menuContent = document.querySelector('.menu-content');
 
-  // Activar animación
-   menuPanel.classList.add('show');
+  sidebar.scrollTop = 0;
+  menuContent.scrollTop = 0;
+
+  // Forzar render
+  menuPanel.offsetHeight;
+
+  // Animación
+  menuPanel.classList.add('show');
 
   // Render inicial
-   renderCategory('Entradas');
+  renderCategory('Entradas');
 
   document.querySelectorAll('.sidebar li').forEach(li => {
     li.classList.toggle('active', li.dataset.category === 'Entradas');
   });
 
-  history.pushState(null, '', '#menu');});
-
-  // Mostrar Entradas por defecto
-  renderCategory('Entradas');
-
-// Activar visualmente el botón de Entradas
-document.querySelectorAll('.sidebar li').forEach(li => {
-    if (li.dataset.category === 'Entradas') li.classList.add('active');
-    else li.classList.remove('active');
-  });
-
   history.pushState(null, '', '#menu');
+});
 
-// Cerrar menú
+// ===============================
+// CERRAR MENÚ
+// ===============================
 closeMenu.addEventListener('click', () => {
   menuPanel.classList.remove('show');
   setTimeout(() => (menuPanel.style.display = 'none'), 400);
   history.back();
 });
 
-// Retroceso navegador
+// ===============================
+// RETROCESO NAVEGADOR
+// ===============================
 window.addEventListener('popstate', () => {
   if (menuPanel.classList.contains('show')) {
     menuPanel.classList.remove('show');
     setTimeout(() => (menuPanel.style.display = 'none'), 400);
   }
 });
+
 
 
