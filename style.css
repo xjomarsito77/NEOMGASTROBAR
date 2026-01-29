@@ -431,15 +431,26 @@ body {
   }
 
   /* HEADER "CATEGORIA" */
-  .sidebar h3 {
+  .sidebar h3{
+    margin: 0 8px 12px;
+    width: calc(100% - 16px);
+    box-sizing: border-box;
+
     padding: 10px 8px;
+    border-radius: 14px;
+    text-align: center;
+
     position: sticky;
     top: 8px;
     z-index: 20;
 
-    white-space: normal;
-    overflow: visible;
+    /* Control del texto */
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow: clip;
+
+    font-size: 0.9rem;     /* 👈 AQUÍ */
+    letter-spacing: 0.5px;
 
     box-shadow: 0 4px 10px rgba(0,0,0,0.35);
   }
