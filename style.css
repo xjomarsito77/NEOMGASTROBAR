@@ -376,7 +376,7 @@ body {
 
   /* FONDO PANEL DEL MENÚ */
   .menu-panel {
-    background-image: url("IMAGENES/LOGOCLARO-mobile.jpg");
+    background-image: url("IMAGENES/fondocel.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -392,7 +392,7 @@ body {
 
   /* FONDO SIDEBAR */
   .sidebar {
-    background-image: url("IMAGENES/sliderofi-mobile.jpg");
+    background-image: url("IMAGENES/slidercel.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
