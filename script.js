@@ -204,14 +204,15 @@ const data = {
   //]
 };
 // ===============================
+// ===============================
 // RESET SCROLL (SIDEBAR + CONTENIDO)
 // ===============================
-function resetMobileScroll() {
+function resetMobileScroll({ sidebar: resetSidebar = false, content: resetContent = true } = {}) {
   const sidebar = document.querySelector('.sidebar');
   const menuContent = document.querySelector('.menu-content');
 
-  if (sidebar) sidebar.scrollTop = 0;
-  if (menuContent) menuContent.scrollTop = 0;
+  if (resetSidebar && sidebar) sidebar.scrollTop = 0;
+  if (resetContent && menuContent) menuContent.scrollTop = 0;
 }
 
 // ===============================
@@ -220,7 +221,7 @@ function resetMobileScroll() {
 function renderCategory(cat) {
   categoryTitle.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
 
-  itemsContainer.innerHTML = data[cat]
+  itemsContainer.innerHTML = (data[cat] || [])
     .map(
       (item, i) => `
       <div class="item">
@@ -236,15 +237,18 @@ function renderCategory(cat) {
     )
     .join('');
 
-  // 🔥 Siempre volver arriba al renderizar
-  resetMobileScroll();
+  // ✅ Solo resetea el scroll del contenido (productos), NO la sidebar
+  resetMobileScroll({ sidebar: false, content: true });
 }
 
 // ===============================
 // MODAL PRODUCTO
 // ===============================
+modal = modal || null;
+
 function openModal(cat, i) {
-  const item = data[cat][i];
+  const item = data[cat]?.[i];
+  if (!item) return;
 
   modal = document.createElement('div');
   modal.classList.add('modal');
@@ -267,7 +271,10 @@ function openModal(cat, i) {
 function closeModal() {
   if (modal) {
     modal.classList.remove('show');
-    setTimeout(() => modal.remove(), 300);
+    setTimeout(() => {
+      modal?.remove();
+      modal = null;
+    }, 300);
   }
 }
 
@@ -276,7 +283,7 @@ function closeModal() {
 // ===============================
 itemsContainer.addEventListener('click', e => {
   if (e.target.classList.contains('ver-btn')) {
-    openModal(e.target.dataset.cat, e.target.dataset.index);
+    openModal(e.target.dataset.cat, Number(e.target.dataset.index));
   }
 });
 
@@ -284,14 +291,16 @@ itemsContainer.addEventListener('click', e => {
 // CAMBIAR CATEGORÍA
 // ===============================
 categoryList.addEventListener('click', e => {
-  if (e.target.tagName === 'LI') {
-    document.querySelectorAll('.sidebar li').forEach(li =>
-      li.classList.remove('active')
-    );
+  const li = e.target.closest('li');
+  if (!li) return;
 
-    e.target.classList.add('active');
-    renderCategory(e.target.dataset.category);
-  }
+  document.querySelectorAll('.sidebar li').forEach(x => x.classList.remove('active'));
+  li.classList.add('active');
+
+  renderCategory(li.dataset.category);
+
+  // ✅ Esto evita saltos raros: solo ajusta si está muy fuera de vista
+  li.scrollIntoView({ block: 'nearest', inline: 'nearest' });
 });
 
 // ===============================
@@ -300,10 +309,10 @@ categoryList.addEventListener('click', e => {
 menuBtn.addEventListener('click', () => {
   menuPanel.style.display = 'flex';
 
-  // 🔥 Reset ANTES de mostrar
-  resetMobileScroll();
+  // ✅ aquí sí: reset sidebar + contenido (solo al abrir)
+  resetMobileScroll({ sidebar: true, content: true });
 
-  // Forzar render
+  // Forzar reflow
   menuPanel.offsetHeight;
 
   // Animación
@@ -312,6 +321,7 @@ menuBtn.addEventListener('click', () => {
   // Categoría inicial
   renderCategory('Entradas');
 
+  // Marcar activa
   document.querySelectorAll('.sidebar li').forEach(li => {
     li.classList.toggle('active', li.dataset.category === 'Entradas');
   });
@@ -320,11 +330,22 @@ menuBtn.addEventListener('click', () => {
 });
 
 // ===============================
-// CERRAR MENÚ
+// CERRAR MENÚ (BOTÓN VOLVER)
 // ===============================
 closeMenu.addEventListener('click', () => {
+  // ✅ dejar listo para la próxima apertura: Entradas activa
+  renderCategory('Entradas');
+  document.querySelectorAll('.sidebar li').forEach(li => {
+    li.classList.toggle('active', li.dataset.category === 'Entradas');
+  });
+
+  // ✅ aquí sí: reset sidebar + contenido (solo al volver)
+  resetMobileScroll({ sidebar: true, content: true });
+
+  // Cerrar animación
   menuPanel.classList.remove('show');
   setTimeout(() => (menuPanel.style.display = 'none'), 400);
+
   history.back();
 });
 
@@ -337,5 +358,3 @@ window.addEventListener('popstate', () => {
     setTimeout(() => (menuPanel.style.display = 'none'), 400);
   }
 });
-
-
