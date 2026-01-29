@@ -437,9 +437,9 @@ body {
     top: 8px;
     z-index: 20;
 
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
 
     box-shadow: 0 4px 10px rgba(0,0,0,0.35);
   }
@@ -455,7 +455,7 @@ body {
 
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;   /* máximo 2 líneas */
+    -webkit-line-clamp: 3;   /* máximo 2 líneas */
     overflow: hidden;
   }
 
