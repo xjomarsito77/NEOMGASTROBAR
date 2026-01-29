@@ -416,6 +416,32 @@ body {
     z-index: 9999;
     pointer-events: auto;
   }
+  /* 1) Sidebar más ancha para que no se partan los textos */
+  .sidebar {
+    width: 42%;
+    min-width: 42%;
+  }
+
+  /* 2) El header y los items ocupan el mismo ancho y se ven “pro” */
+  .sidebar h3,
+  .sidebar li {
+    margin: 0 8px;
+  }
+
+  .sidebar li {
+    display: block;
+    width: calc(100% - 16px); /* 100% menos márgenes */
+    box-sizing: border-box;
+    white-space: nowrap;       /* evita que se parta en varias líneas */
+    overflow: hidden;
+    text-overflow: ellipsis;   /* si no cabe, pone ... */
+    font-size: 0.85rem;
+  }
+
+  /* 3) Para que el activo se vea como “barra” completa */
+  .sidebar li.active {
+    border-radius: 14px;
+  }
 }
 
 #categoryTitle {
