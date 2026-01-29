@@ -431,7 +431,7 @@ body {
   }
 
   /* HEADER "CATEGORIA" */
-  .sidebar h3{
+   .sidebar h3 {
     margin: 0 8px 12px;
     width: calc(100% - 16px);
     box-sizing: border-box;
@@ -444,13 +444,10 @@ body {
     top: 8px;
     z-index: 20;
 
-    /* Control del texto */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: clip;
-
-    font-size: 0.9rem;     /* 👈 AQUÍ */
-    letter-spacing: 0.5px;
+    /* 👇 CLAVE */
+    white-space: normal;      /* permite 2 líneas */
+    line-height: 1.1;
+    font-size: 0.85rem;       /* tamaño correcto para móvil */
 
     box-shadow: 0 4px 10px rgba(0,0,0,0.35);
   }
