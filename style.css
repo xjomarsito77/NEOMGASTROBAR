@@ -366,23 +366,24 @@ body {
 ========================= */
 @media (max-width: 768px) {
 
-   /* FONDO PRINCIPAL (HOME) */
+  /* =========================
+     FONDOS SOLO MÓVIL
+  ========================= */
+
   body {
-    background-image: url("IMAGENES/LOGOCLARO-mobile.jpg");
+    background-image: url("IMAGENES/fondocel2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  /* FONDO PANEL DEL MENÚ */
   .menu-panel {
-    background-image: url("IMAGENES/fondocel.jpg");
+    background-image: url("IMAGENES/fondocel2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  /* FONDO CONTENEDOR DEL MENÚ */
   .menu-container {
     background-image: url("IMAGENES/contcel.jpg");
     background-size: cover;
@@ -390,7 +391,6 @@ body {
     background-repeat: no-repeat;
   }
 
-  /* FONDO SIDEBAR */
   .sidebar {
     background-image: url("IMAGENES/slidercel.jpg");
     background-size: cover;
@@ -398,13 +398,57 @@ body {
     background-repeat: no-repeat;
   }
 
+  /* =========================
+     LAYOUT (EQUILIBRIO)
+  ========================= */
+
+  .sidebar {
+    width: 34%;
+    min-width: 34%;
+    padding: 10px;
+  }
+
   .menu-content {
+    width: 66%;
     padding: 12px;
   }
 
   .items {
     grid-template-columns: 1fr;
   }
+
+  /* =========================
+     CATEGORÍAS (TEXTOS BONITOS)
+  ========================= */
+
+  .sidebar h3,
+  .sidebar li {
+    margin: 0 8px 12px;
+    width: calc(100% - 16px);
+    box-sizing: border-box;
+    border-radius: 14px;
+    text-align: center;
+  }
+
+  .sidebar li {
+    white-space: normal;       /* permite saltos */
+    line-height: 1.05;
+    font-size: 0.82rem;
+    padding: 10px 8px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;     /* máximo 2 líneas */
+    overflow: hidden;
+  }
+
+  .sidebar li.active {
+    font-weight: 600;
+  }
+
+  /* =========================
+     BOTÓN VOLVER
+  ========================= */
 
   .close-btn {
     position: absolute;
@@ -416,33 +460,8 @@ body {
     z-index: 9999;
     pointer-events: auto;
   }
-  /* 1) Sidebar más ancha para que no se partan los textos */
-  .sidebar {
-    width: 42%;
-    min-width: 42%;
-  }
-
-  /* 2) El header y los items ocupan el mismo ancho y se ven “pro” */
-  .sidebar h3,
-  .sidebar li {
-    margin: 0 8px;
-  }
-
-  .sidebar li {
-    display: block;
-    width: calc(100% - 16px); /* 100% menos márgenes */
-    box-sizing: border-box;
-    white-space: nowrap;       /* evita que se parta en varias líneas */
-    overflow: hidden;
-    text-overflow: ellipsis;   /* si no cabe, pone ... */
-    font-size: 0.85rem;
-  }
-
-  /* 3) Para que el activo se vea como “barra” completa */
-  .sidebar li.active {
-    border-radius: 14px;
-  }
 }
+
 
 #categoryTitle {
   display: none !important;
