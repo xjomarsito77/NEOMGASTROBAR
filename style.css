@@ -26,12 +26,14 @@ body {
 /* =========================
    OVERLAY
 ========================= */
-.overlay {
+.overlay{
   position: fixed;
   inset: 0;
   
   z-index: 0;
+  pointer-events: none;
 }
+
 
 /* =========================
    CONTENEDOR PRINCIPAL
