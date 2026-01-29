@@ -12,7 +12,7 @@ html, body {
 body {
   font-family: 'Poppins', sans-serif;
 
-  background: url('IMAGENES/LOGO_DEFINITIVO_COM.jpg') no-repeat center center;
+  background: url('IMAGENES/LOGOCLARO.jpg') no-repeat center center;
   background-size: cover;
 
   color: white;
@@ -29,7 +29,7 @@ body {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  
   z-index: 0;
 }
 
@@ -125,9 +125,9 @@ body {
   justify-content: center;
   align-items: center;
 
-  background: url('IMAGENES/LOGO_DEFINITIVO_COM.jpg') no-repeat center center;
+  background: url('IMAGENES/LOGOCLARO.jpg') no-repeat center center;
   background-size: cover;
-  background-color: rgba(20, 20, 20, 0.85);
+  
 
   z-index: 999;
   opacity: 0;
@@ -150,10 +150,26 @@ body {
   width: 90%;
   max-width: 1200px;
   height: 85%;
-  background: #141414;
+
+  background: url("IMAGENES/cont.jpg") center / cover no-repeat;
+  position: relative;
+
   border-radius: 16px;
   overflow: hidden;
 }
+.menu-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 0;
+}
+.menu-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+
 
 /* =========================
    SIDEBAR
@@ -189,7 +205,10 @@ body {
 
   border-radius: 14px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+
+  z-index: 10;            /* CLAVE */
 }
+
 
 .sidebar ul {
   list-style: none;
@@ -199,11 +218,14 @@ body {
 
 .sidebar li {
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 14px;
   text-align: center;
   cursor: pointer;
   transition: background 0.3s;
+
+  margin: 0 10px;        /* CLAVE: igual que el h3 */
 }
+
 
 .sidebar li.active,
 .sidebar li:hover {
