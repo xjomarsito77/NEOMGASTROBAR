@@ -369,14 +369,19 @@ body {
   body {
     overflow: hidden;
     padding-bottom: env(safe-area-inset-bottom);
+
+    /* FONDOS EN MÓVIL */
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #000;
   }
 
-  .logo{
-    margin-top: 1.5px;
-  }
-
-  .container {
-    min-height: 100dvh;
+  .menu-panel {
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #000;
   }
 
   .menu-container {
@@ -384,12 +389,24 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 0;
+
+    /* FONDO DEL MENÚ EN MÓVIL */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0.85);
   }
 
   .sidebar {
     width: 35%;
     min-width: 35%;
     padding: 10px;
+
+    /* FONDO SIDEBAR EN MÓVIL */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
   }
 
   .sidebar h3 {
@@ -422,6 +439,7 @@ body {
     pointer-events: auto;
   }
 }
+
 #categoryTitle {
   display: none !important;
 }
