@@ -366,58 +366,36 @@ body {
 ========================= */
 @media (max-width: 768px) {
 
+   /* FONDO PRINCIPAL (HOME) */
   body {
-    overflow: hidden;
-    padding-bottom: env(safe-area-inset-bottom);
-
-    /* FONDOS EN MÓVIL */
-    background-size: contain;
-    background-position: top center;
+    background-image: url("IMAGENES/LOGOCLARO-mobile.jpg");
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    background-color: #000;
   }
 
+  /* FONDO PANEL DEL MENÚ */
   .menu-panel {
-    background-size: contain;
-    background-position: top center;
+    background-image: url("IMAGENES/LOGOCLARO-mobile.jpg");
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    background-color: #000;
   }
 
+  /* FONDO CONTENEDOR DEL MENÚ */
   .menu-container {
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-
-    /* FONDO DEL MENÚ EN MÓVIL */
-    background-size: contain;
+    background-image: url("IMAGENES/contcel.jpg");
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgba(0,0,0,0.85);
   }
 
+  /* FONDO SIDEBAR */
   .sidebar {
-    width: 35%;
-    min-width: 35%;
-    padding: 10px;
-
-    /* FONDO SIDEBAR EN MÓVIL */
-    background-size: contain;
+    background-image: url("IMAGENES/sliderofi-mobile.jpg");
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #000;
-  }
-
-  .sidebar h3 {
-    top: 8px;
-    font-size: 0.95rem;
-    padding: 10px 14px;
-  }
-
-  .sidebar li {
-    font-size: 0.85rem;
-    padding: 10px;
   }
 
   .menu-content {
