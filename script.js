@@ -131,7 +131,6 @@ const data = {
   COCTEL: [
     { name: "Old Fashioned", desc: "", price: "$0", img: "" },
     { name: "God Father", desc: "", price: "$0", img: "" },
-    { name: "Mojito", desc: "", price: "$0", img: "" },
     { name: "Boulevardier", desc: "", price: "$0", img: "" },
     { name: "Negroni", desc: "", price: "$0", img: "" },
     { name: "Americano", desc: "", price: "$0", img: "" },
