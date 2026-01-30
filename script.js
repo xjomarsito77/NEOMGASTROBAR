@@ -92,8 +92,8 @@ const data = {
   ],
 
    POSTRES: [
-    { name: "Torta De Chocolate Con Helado", desc: "",
-       price: "$17.000", img: "" },
+    { name: "Paletas Artesanales", desc: "Sabores disponibles: Chocolate, Canela, Milo.",
+       price: "$15.000", img: "" },
   ],
 
   bebidas: [
