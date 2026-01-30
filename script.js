@@ -47,7 +47,7 @@ const data = {
     { name: "Pechuga de Pollo", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$39.000", img: "" },
     { name: "Lomo de Cerdo", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$45.000", img: "" },
     { name: "Baby Beef", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$50.000", img: "" },
-    { name: "Costillas BBQ", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$57.000", img: "IMAGENES/COSTILLASBBQ.jpg" },
+    { name: "Costillas BBQ", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$57.000", img: "IMAGENES/COSTILLAS.jpg" },
     { name: "Picanha", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$80.000", img: "" },
     { name: "New York", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$95.000", img: "" },
     { name: "Rib Eye", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$100.000", img: "" },
