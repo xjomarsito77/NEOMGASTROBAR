@@ -12,7 +12,7 @@ html, body {
 body {
   font-family: 'Poppins', sans-serif;
 
-  background: url('IMAGENES/LOGOCLARO.jpg') no-repeat center center;
+  background: url('IMAGENES/logoclarocom.jpg') no-repeat center center;
   background-size: cover;
 
   color: white;
@@ -127,7 +127,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  background: url('IMAGENES/LOGOCLARO.jpg') no-repeat center center;
+  background: url('IMAGENES/logoclarocom.jpg') no-repeat center center;
   background-size: cover;
   
 
@@ -371,14 +371,14 @@ body {
   ========================= */
 
   body {
-    background-image: url("IMAGENES/fondopagcel.jpg");
+    background-image: url("IMAGENES/fondopagcelcom.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
   .menu-panel {
-    background-image: url("IMAGENES/fondopagcel.jpg");
+    background-image: url("IMAGENES/fondopagcelcom.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
