@@ -23,11 +23,11 @@ const data = {
     { name: "Mini Hot Dog x3", desc: "Tres (3) mini hot dogs en pan artellano, con salchicha ranchera, salsa de ajo, dip dulce y salado, y salsa de la casa.", 
       price: "$30.000", img: "IMAGENES/triodog.jpg" },  
     { name: "Mini Choripanes x3", desc: "Tres (3) mini choripanes en pan artellano, con chorizo, salsa de ajo y chimichurri.", 
-      price: "$33.000", img: "" },
+      price: "$33.000", img: "IMAGENES/choripan.jpg" },
     { name: "Ronda De Tacos x3", desc: "Tres (3) tacos surtidos: pollo crispy con salsa de ajo, aguacate y cebolla encurtida; cochinita con salsa BBQ y chipotle; y carne asada con cebolla roja y pico de gallo.", 
-      price: "$33.000", img: "" },
+      price: "$33.000", img: "IMAGENES/tacos.jpg" },
     { name: "Mini Burger x3", desc: "Receta del chef.", 
-      price: "$35.000", img: "" },
+      price: "$35.000", img: "IMAGENES/triomini.jpg" },
   ],
 
   ALMUERZOS: [
@@ -67,7 +67,7 @@ const data = {
     { name: "Cheese Bacon Burger", desc: "Pan artellano con carne burger, queso amarillo, tocineta, cebolla roja fresca y pepinillos, con salsa de la casa. Acompañada de papas a la francesa.", 
       price: "$38.000", img: "" },
     { name: "Burger OG", desc: "Pan artellano con carne burger, queso cheddar y mozzarella, chorizo artesanal de cerdo, tocineta, lechuga y tomate, acompañada de salsa chipotle, salsa de la casa y dip dulce & salado. Servida con papas a la francesa.",
-       price: "$38.000", img: "" },
+       price: "$38.000", img: "IMAGENES/burgerog.jpg" },
     { name: "Spicy & Sweet Burger", desc: "Pan artellano con carne burger, queso mozzarella, pimentones caramelizados y salsa de la casa, acompañada de lechuga y tomate. Servida con papas a la francesa.",
        price: "$39.000", img: "" },
     { name: "Burger Whopper", desc: "Pan artellano con carne burger, queso cheddar y mozzarella apanado, cebolla caramelizada, tocineta y salsa de la casa. Acompañada de papas a la francesa.",
@@ -97,10 +97,10 @@ const data = {
   ],
 
   bebidas: [
-    { name: "Agua", desc: "", price: "$7.500", img: "" },
-    { name: "Soda Bretaña", desc: "", price: "$8.900", img: "" },
+    { name: "Agua Hatsu", desc: "", price: "$7.500", img: "IMAGENES/AGUA1.jpg" },
+    { name: "Soda Bretaña", desc: "", price: "$8.900", img: "IMAGENES/bretaña.jpg" },
     { name: "Gaseosa", desc: "", price: "$8.900", img: "" },
-    { name: "Ginger Canada Dry", desc: "", price: "$8.900", img: "" },
+    { name: "Ginger Canada Dry", desc: "", price: "$8.900", img: "IMAGENES/canadry.jpg" },
     { name: "Soda Hatsu", desc: "", price: "$10.900", img: "" },
     { name: "Te Hatsu", desc: "", price: "$10.900", img: "" },
     { name: "Jugo de Mandarina", desc: "", price: "$11.900", img: "" },
