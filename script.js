@@ -11,17 +11,17 @@ let modal = null;
 const data = {
   Entradas: [
     { name: "Fundido De Quesos", desc: "Mezcla de queso cheddar y queso blanco fundidos, acompañados de ragú de carne molida, cebolla encurtida y salsa de ajo.",
-       price: "$25.000", img: "" },
+       price: "$25.000", img: "IMAGENES/fundidoqueso.jpg" },
     { name: "Onion Rings", desc: "Doce (12) aros de cebolla crujientes, acompañados de salsa de pepinillo.", 
-      price: "$27.000", img: "" },
+      price: "$27.000", img: "IMAGENES/onion.jpg" },
     { name: "Ceviche Neom", desc: "Cubos de tilapia marinados en leche de tigre, acompañados de salsa de cilantro, wonton crujiente, aguacate, cebolla encurtida y un toque de tajín. ", 
-      price: "$30.000", img: "" },
+      price: "$30.000", img: "IMAGENES/cevicheneom.jpg" },
     { name: "Nachos Carne Molida", desc: "Totopos crujientes cubiertos con carne molida, queso amarillo y queso blanco, acompañados de pico de gallo, guacamole, sour cream y jalapeños.", 
-      price: "$30.000", img: "" },
+      price: "$30.000", img: "IMAGENES/nachoscarne.jpg" },
     { name: "Mozzarella Fingers", desc: "Ocho (8) palitos de mozzarella apanados y dorados, acompañados de salsa napolitana. ", 
       price: "$30.000", img: "" },
     { name: "Mini Hot Dog x3", desc: "Tres (3) mini hot dogs en pan artellano, con salchicha ranchera, salsa de ajo, dip dulce y salado, y salsa de la casa.", 
-      price: "$30.000", img: "" },  
+      price: "$30.000", img: "IMAGENES/triodog.jpg" },  
     { name: "Mini Choripanes x3", desc: "Tres (3) mini choripanes en pan artellano, con chorizo, salsa de ajo y chimichurri.", 
       price: "$33.000", img: "" },
     { name: "Ronda De Tacos x3", desc: "Tres (3) tacos surtidos: pollo crispy con salsa de ajo, aguacate y cebolla encurtida; cochinita con salsa BBQ y chipotle; y carne asada con cebolla roja y pico de gallo.", 
@@ -38,9 +38,9 @@ const data = {
     { name: "Pollo Cremoso", desc: "Arroz saltado con cebolla roja, tocineta y champiñones, preparado con crema de leche, soya y ajinomoto, terminado con queso parmesano. Acompañado de pechuga de pollo y cebollín chino.", 
       price: "$35.000", img: "" },
     { name: "Lomo Cremoso", desc: "Arroz saltado con cebolla roja, tocineta y champiñones, preparado con crema de leche, soya y ajinomoto, terminado con queso parmesano. Acompañado de lomo y cebollín chino.", 
-      price: "$40.000", img: "" },
+      price: "$40.000", img: "IMAGENES/lomocremoso.jpg" },
     { name: "Wok Neom", desc: "Arroz saltado con cebolla larga, zanahoria y cebollín chino, preparado con pasta de ajo, soya, jengibre, ajonjolí y ajinomoto. Acompañado de cubos de pollo y lomo, medio chorizo artesanal de cerdo, raíz china, wonton frito y chicharrón.", 
-      price: "$45.000", img: "" },
+      price: "$45.000", img: "IMAGENES/wokneom.jpg" },
   ],
 
   CORTES_CARNES: [
@@ -227,7 +227,14 @@ function renderCategory(cat) {
     .map(
       (item, i) => `
       <div class="item">
-        ${item.img ? `<img src="${item.img}" alt="${item.name}">` : ""}
+        <div class="item-media">
+          ${
+            item.img
+              ? `<img src="${item.img}" alt="${item.name}" loading="lazy">`
+              : `<div class="no-img"></div>`
+          }
+        </div>
+
         <div class="item-content">
           <h4>${item.name}</h4>
           <p>${item.desc}</p>
@@ -242,6 +249,8 @@ function renderCategory(cat) {
   // ✅ Solo resetea scroll de productos
   resetMobileScroll({ sidebar: false, content: true });
 }
+
+
 
 // ===============================
 // MODAL PRODUCTO
