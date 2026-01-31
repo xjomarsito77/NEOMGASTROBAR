@@ -110,6 +110,7 @@ const data = {
     { name: "Soda Frutos rojos", desc: "Todas nuestras sodas están elaboradas a base de Hatsu.", price: "$18.900", img: "" },
     { name: "Soda Frutos Amarillos", desc: "Todas nuestras sodas están elaboradas a base de Hatsu.", price: "$18.900", img: "" },
     { name: "Soda de Lyche", desc: "Todas nuestras sodas están elaboradas a base de Hatsu.", price: "$18.900", img: "" },
+    { name: "Soda Lulo house", desc: "Todas nuestras sodas están elaboradas a base de Hatsu.", price: "$18.900", img: "" },
     { name: "Red Bull", desc: "", price: "$15.900", img: "" },
     { name: "Red Bull Suggarfree", desc: "", price: "$15.900", img: "" },
     { name: "Red Bull edittion red", desc: "", price: "$15.900", img: "" },
