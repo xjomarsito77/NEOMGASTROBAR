@@ -4,15 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NEOM Gastrobar Food & Drink</title>
-  <link rel="icon" type="image" href="IMAGENES/LOGO_DEFINITIVO_COM.jpg" />
-  <link rel="stylesheet" href="style.css?v=23" />
+
+  <link rel="icon" type="image" href="IMAGENES/LOGO_DEFINITIVO_COM.jpg?v=24" />
+  <link rel="stylesheet" href="style.css?v=24" />
 </head>
 <body>
   <div class="overlay"></div>
 
   <div class="container">
     <div class="logo">
-      <img src="IMAGENES/LOGO_DEFINITIVO_COM.jpg" alt="Logo Gastrobar" />
+      <img src="IMAGENES/LOGO_DEFINITIVO_COM.jpg?v=24" alt="Logo Gastrobar" />
     </div>
 
     <div class="buttons">
@@ -31,19 +32,23 @@
         <button class="btn">📍MAPS</button>
       </a>
     </div>
+
     <div class="social">
       <p>Síguenos</p>
       <div class="icons">
-        <a href="https://www.instagram.com/neomgastrobar?igsh=MWZnemMyNTExNjY3Ng%3D%3D&utm_source=qr"><img src="IMAGENES/INSTAGRAM-LG.jpg" alt="Instagram"></a>
+        <a href="https://www.instagram.com/neomgastrobar?igsh=MWZnemMyNTExNjY3Ng%3D%3D&utm_source=qr">
+          <img src="IMAGENES/INSTAGRAM-LG.jpg?v=24" alt="Instagram">
+        </a>
       </div>
     </div>
-  </div> 
+  </div>
 
   <!-- PANEL DE MENÚ -->
   <div class="menu-panel" id="menuPanel">
     <div class="menu-container">
       <aside class="sidebar">
         <h3>CATEGORIAS</h3>
+
         <ul id="categoryList">
           <li class="active" data-category="Entradas">ENTRADAS</li>
           <li data-category="ALMUERZOS">ALMUERZOS</li>
@@ -63,21 +68,18 @@
           <li data-category="GINEBRAS">GINEBRAS</li>
           <li data-category="TEQUILAS">TEQUILAS</li>
           <li data-category="ADICIONALES">ADICIONALES</li>
-          <br>
+        </ul>
       </aside>
 
       <main class="menu-content">
         <h2 id="categoryTitle">Hot Dogs</h2>
-        <div class="items" id="itemsContainer">
-          <!-- Aquí se cargan los productos dinámicamente -->
-        </div>
-        
+        <div class="items" id="itemsContainer"></div>
       </main>
-      
     </div>
+
     <button class="close-btn" id="closeMenu">← Volver</button>
   </div>
-  
-  <script src="script.js?v=23"></script>
+
+  <script src="script.js?v=24"></script>
 </body>
 </html>

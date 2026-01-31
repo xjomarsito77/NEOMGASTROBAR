@@ -7,6 +7,7 @@ const itemsContainer = document.getElementById('itemsContainer');
 
 let modal = null;
 
+const IMG_V ="24"
 // Base de datos
 const data = {
   Entradas: [
@@ -203,9 +204,9 @@ const data = {
   ]
 };
 
-// ===============================
-// RESET SCROLL (SIDEBAR + CONTENIDO)
-// ===============================
+/* ===============================
+   RESET SCROLL (SIDEBAR + CONTENIDO)
+=============================== */
 function resetMobileScroll({ sidebar: resetSidebar = false, content: resetContent = true } = {}) {
   const sidebar = document.querySelector('.sidebar');
   const menuContent = document.querySelector('.menu-content');
@@ -214,23 +215,22 @@ function resetMobileScroll({ sidebar: resetSidebar = false, content: resetConten
   if (resetContent && menuContent) menuContent.scrollTop = 0;
 }
 
-// ===============================
-// RENDERIZAR CATEGORÍA
-// ===============================
+/* ===============================
+   RENDERIZAR CATEGORÍA
+=============================== */
 function renderCategory(cat) {
-  // Si algún día llegara una categoría inexistente:
   if (!data[cat]) cat = "Entradas";
 
   categoryTitle.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
 
   itemsContainer.innerHTML = (data[cat] || [])
-    .map(
-      (item, i) => `
+    .map((item, i) => `
       <div class="item">
         <div class="item-media">
           ${
             item.img
-              ? `<img src="${item.img}" alt="${item.name}" loading="lazy">`
+              ? `<img src="${item.img}?v=${IMG_V}" alt="${item.name}" loading="lazy"
+                   onerror="this.closest('.item-media').innerHTML='<div class=\\'no-img\\'></div>'">`
               : `<div class="no-img"></div>`
           }
         </div>
@@ -242,19 +242,15 @@ function renderCategory(cat) {
           <button class="ver-btn" data-cat="${cat}" data-index="${i}">VER</button>
         </div>
       </div>
-    `
-    )
+    `)
     .join('');
 
-  // ✅ Solo resetea scroll de productos
   resetMobileScroll({ sidebar: false, content: true });
 }
 
-
-
-// ===============================
-// MODAL PRODUCTO
-// ===============================
+/* ===============================
+   MODAL PRODUCTO
+=============================== */
 function openModal(cat, i) {
   const item = data[cat]?.[i];
   if (!item) return;
@@ -264,7 +260,7 @@ function openModal(cat, i) {
   modal.innerHTML = `
     <div class="modal-content">
       <button class="close-modal">✕</button>
-      ${item.img ? `<img src="${item.img}" alt="${item.name}">` : ""}
+      ${item.img ? `<img src="${item.img}?v=${IMG_V}" alt="${item.name}">` : ""}
       <h2>${item.name}</h2>
       <h3>${item.price}</h3>
       <p>${item.desc}</p>
@@ -287,18 +283,18 @@ function closeModal() {
   }
 }
 
-// ===============================
-// EVENTO VER PRODUCTO
-// ===============================
+/* ===============================
+   EVENTO VER PRODUCTO
+=============================== */
 itemsContainer.addEventListener('click', e => {
   if (e.target.classList.contains('ver-btn')) {
     openModal(e.target.dataset.cat, Number(e.target.dataset.index));
   }
 });
 
-// ===============================
-// CAMBIAR CATEGORÍA
-// ===============================
+/* ===============================
+   CAMBIAR CATEGORÍA
+=============================== */
 categoryList.addEventListener('click', e => {
   const li = e.target.closest('li');
   if (!li) return;
@@ -308,22 +304,17 @@ categoryList.addEventListener('click', e => {
 
   renderCategory(li.dataset.category);
 
-  // No salta al inicio: solo ajusta si hace falta
   li.scrollIntoView({ block: 'nearest', inline: 'nearest' });
 });
 
-// ===============================
-// ABRIR MENÚ
-// ===============================
+/* ===============================
+   ABRIR MENÚ
+=============================== */
 menuBtn.addEventListener('click', () => {
   menuPanel.style.display = 'flex';
-
-  // Al abrir, sí resetea todo
   resetMobileScroll({ sidebar: true, content: true });
 
-  // Reflow para animación
   menuPanel.offsetHeight;
-
   menuPanel.classList.add('show');
 
   renderCategory('Entradas');
@@ -335,11 +326,10 @@ menuBtn.addEventListener('click', () => {
   history.pushState(null, '', '#menu');
 });
 
-// ===============================
-// CERRAR MENÚ
-// ===============================
+/* ===============================
+   CERRAR MENÚ
+=============================== */
 closeMenu.addEventListener('click', () => {
-  // Dejar listo para próxima vez
   renderCategory('Entradas');
   document.querySelectorAll('.sidebar li').forEach(li => {
     li.classList.toggle('active', li.dataset.category === 'Entradas');
@@ -353,9 +343,9 @@ closeMenu.addEventListener('click', () => {
   history.back();
 });
 
-// ===============================
-// RETROCESO NAVEGADOR
-// ===============================
+/* ===============================
+   RETROCESO NAVEGADOR
+=============================== */
 window.addEventListener('popstate', () => {
   if (menuPanel.classList.contains('show')) {
     menuPanel.classList.remove('show');
@@ -363,5 +353,5 @@ window.addEventListener('popstate', () => {
   }
 });
 
-// Render inicial (opcional)
+/* Render inicial */
 renderCategory('Entradas');
