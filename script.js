@@ -7,7 +7,7 @@ const itemsContainer = document.getElementById('itemsContainer');
 
 let modal = null;
 
-const IMG_V ="25"
+const IMG_V ="26"
 // Base de datos
 const data = {
   Entradas: [
@@ -39,7 +39,7 @@ const data = {
     { name: "Pollo Cremoso", desc: "Arroz saltado con cebolla roja, tocineta y champiñones, preparado con crema de leche, soya y ajinomoto, terminado con queso parmesano. Acompañado de pechuga de pollo y cebollín chino.", 
       price: "$35.000", img: "" },
     { name: "Lomo Cremoso", desc: "Arroz saltado con cebolla roja, tocineta y champiñones, preparado con crema de leche, soya y ajinomoto, terminado con queso parmesano. Acompañado de lomo y cebollín chino.", 
-      price: "$40.000", img: "IMAGENES/lomocremoso.jpg" },
+      price: "$35.000", img: "IMAGENES/lomocremoso.jpg" },
     { name: "Wok Neom", desc: "Arroz saltado con cebolla larga, zanahoria y cebollín chino, preparado con pasta de ajo, soya, jengibre, ajonjolí y ajinomoto. Acompañado de cubos de pollo y lomo, medio chorizo artesanal de cerdo, raíz china, wonton frito y chicharrón.", 
       price: "$45.000", img: "IMAGENES/wokneom.jpg" },
   ],
