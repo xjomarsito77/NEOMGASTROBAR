@@ -7,7 +7,7 @@ const itemsContainer = document.getElementById('itemsContainer');
 
 let modal = null;
 
-const IMG_V ="24"
+const IMG_V ="25"
 // Base de datos
 const data = {
   Entradas: [
@@ -100,7 +100,7 @@ const data = {
   bebidas: [
     { name: "Agua Hatsu", desc: "", price: "$7.500", img: "IMAGENES/AGUA1.jpg" },
     { name: "Soda Bretaña", desc: "", price: "$8.900", img: "IMAGENES/bretaña.jpg" },
-    { name: "Gaseosa", desc: "", price: "$8.900", img: "" },
+    { name: "Pepsi", desc: "", price: "$8.900", img: "IMAGENES/pepsi.jpg" },
     { name: "Ginger Canada Dry", desc: "", price: "$8.900", img: "IMAGENES/canadry.jpg" },
     { name: "Soda Hatsu", desc: "", price: "$10.900", img: "" },
     { name: "Te Hatsu", desc: "", price: "$10.900", img: "" },
@@ -112,19 +112,19 @@ const data = {
     { name: "Soda Frutos Amarillos", desc: "Todas nuestras sodas están elaboradas a base de Hatsu.", price: "$18.900", img: "" },
     { name: "Soda de Lyche", desc: "Todas nuestras sodas están elaboradas a base de Hatsu.", price: "$18.900", img: "" },
     { name: "Soda Lulo house", desc: "Todas nuestras sodas están elaboradas a base de Hatsu.", price: "$18.900", img: "" },
-    { name: "Red Bull", desc: "", price: "$15.900", img: "" },
-    { name: "Red Bull Suggarfree", desc: "", price: "$15.900", img: "" },
-    { name: "Red Bull edittion red", desc: "", price: "$15.900", img: "" },
-    { name: "Gatorade", desc: "", price: "$11.900", img: "" },
+    { name: "Red Bull", desc: "", price: "$15.900", img: "IMAGENES/redbull.jpg" },
+    { name: "Red Bull Sugarfree", desc: "", price: "$15.900", img: "IMAGENES/redbul2.jpg" },
+    { name: "Red Bull edition red", desc: "", price: "$15.900", img: "IMAGENES/redbulr.jpg" },
+    { name: "Gatorade", desc: "", price: "$11.900", img: "IMAGENES/gatorade.jpg" },
   ],
 
   CERVEZAS: [
-    { name: "Costeñita", desc: "", price: "$7.900", img: "" },
-    { name: "Budweiser", desc: "", price: "$9.900", img: "" },
-    { name: "Club Colombia Dorada", desc: "", price: "$10.900", img: "" },
-    { name: "Heineken", desc: "", price: "$12.900", img: "" },
-    { name: "Corona Extra", desc: "", price: "$13.900", img: "" },
-    { name: "Stella Artois", desc: "", price: "$14.900", img: "" },
+    { name: "Costeñita", desc: "", price: "$7.900", img: "IMAGENES/coste.jpg" },
+    { name: "Budweiser", desc: "", price: "$9.900", img: "IMAGENES/bud.jpg" },
+    { name: "Club Colombia Dorada", desc: "", price: "$10.900", img: "IMAGENES/clb.jpg" },
+    { name: "Heineken", desc: "", price: "$12.900", img: "IMAGENES/hei.jpg" },
+    { name: "Corona Extra", desc: "", price: "$13.900", img: "IMAGENES/coro.jpg" },
+    { name: "Stella Artois", desc: "", price: "$14.900", img: "IMAGENES/ste.jpg" },
     { name: "Smirnoff Ice", desc: "", price: "$15.900", img: "" },
   ],
 
@@ -159,9 +159,9 @@ const data = {
   ],
 
   AGUARDIENTES: [
-    { name: "Aguardiente Antioqueño Tapa Azul", desc: "", price: "$200.000", img: "" },
-    { name: "Aguardiente Antioqueño Tapa Verde (Sin Azúcar)", desc: "", price: "$200.000", img: "" },
-    { name: "Aguardiente Antioqueño Amarillo de Manzanares", desc: "", price: "$220.000", img: "" },
+    { name: "Aguardiente Antioqueño Tapa Azul", desc: "", price: "$200.000", img: "IMAGENES/tazul.jpg" },
+    { name: "Aguardiente Antioqueño Tapa Verde (Sin Azúcar)", desc: "", price: "$200.000", img: "IMAGENES/tverde.jpg" },
+    { name: "Aguardiente Amarillo de Manzanares", desc: "", price: "$220.000", img: "IMAGENES/tama.jpg" },
   ],
 
   WHISKYS: [
