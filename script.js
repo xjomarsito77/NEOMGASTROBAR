@@ -7,7 +7,7 @@ const itemsContainer = document.getElementById('itemsContainer');
 
 let modal = null;
 
-const IMG_V ="26"
+const IMG_V ="27"
 // Base de datos
 const data = {
   Entradas: [
@@ -64,7 +64,7 @@ const data = {
     { name: "Chori Burger", desc: "Pan artellano con carne de chorizo, queso mozzarella, salsa chipotle, tomate y lechuga. Acompañada de papas a la francesa.", 
       price: "$37.000", img: "" },
     { name: "Burger Crispy Cesar", desc: "Pan artellano con pechuga apanada, queso mozzarella y salsa de ajo, acompañada de mix de lechugas con parmesano y salsa de ajo. Servida con papas a la francesa.",
-       price: "$37.000", img: "" },
+      price: "$37.000", img: "IMAGENES/crisp.jpg" },
     { name: "Cheese Bacon Burger", desc: "Pan artellano con carne burger, queso amarillo, tocineta, cebolla roja fresca y pepinillos, con salsa de la casa. Acompañada de papas a la francesa.", 
       price: "$38.000", img: "" },
     { name: "Burger OG", desc: "Pan artellano con carne burger, queso cheddar y mozzarella, chorizo artesanal de cerdo, tocineta, lechuga y tomate, acompañada de salsa chipotle, salsa de la casa y dip dulce & salado. Servida con papas a la francesa.",
@@ -72,7 +72,7 @@ const data = {
     { name: "Spicy & Sweet Burger", desc: "Pan artellano con carne burger, queso mozzarella, pimentones caramelizados y salsa de la casa, acompañada de lechuga y tomate. Servida con papas a la francesa.",
        price: "$39.000", img: "" },
     { name: "Burger Whopper", desc: "Pan artellano con carne burger, queso cheddar y mozzarella apanado, cebolla caramelizada, tocineta y salsa de la casa. Acompañada de papas a la francesa.",
-       price: "$39.000", img: "" },
+       price: "$39.000", img: "IMAGENES/whop.jpg" },
     
   ],
 
@@ -165,25 +165,25 @@ const data = {
   ],
 
   WHISKYS: [
-    { name: "Buchanan’s Deluxe 12 años 750 ml", desc: "", price: "$340.000", img: "" },
-    { name: "Buchanan’s Master 750 ml", desc: "", price: "$390.000", img: "" },
+    { name: "Buchanan’s Deluxe 12 años 750 ml", desc: "", price: "$340.000", img: "IMAGENES/bucdel.jpg" },
+    { name: "Buchanan’s Master 750 ml", desc: "", price: "$390.000", img: "IMAGENES/bucm.jpg" },
     { name: "Buchanan’s 10 años 750 ml", desc: "", price: "$650.000", img: "" },
-    { name: "Old Parr 12 años 750 ml", desc: "", price: "$330.000", img: "" },
-    { name: "Whisky Johnnie Walker Black Label", desc: "", price: "$330.000", img: "" },
-    { name: "The Glenlivet Single Malt Scotch Whisky", desc: "", price: "$320.000", img: "" },
-    { name: "Whisky Johnnie Walker Gold Label Reserve", desc: "", price: "$650.000", img: "" },
-    { name: "Whiskey Jack Daniel’s ", desc: "", price: "$300.000", img: "" },
+    { name: "Old Parr 12 años 750 ml", desc: "", price: "$330.000", img: "IMAGENES/oldp.jpg" },
+    { name: "Whisky Johnnie Walker Black Label", desc: "", price: "$330.000", img: "IMAGENES/jonie.jpg" },
+    { name: "The Glenlivet Single Malt Scotch Whisky", desc: "", price: "$320.000", img: "IMAGENES/glenli.jpg" },
+    { name: "Whisky Johnnie Walker Gold Label Reserve", desc: "", price: "$650.000", img: "IMAGENES/joniegol.jpg" },
+    { name: "Whiskey Jack Daniel’s ", desc: "", price: "$300.000", img: "IMAGENES/jack.jpg" },
   ],
 
   RON: [
-    { name: "Ron Medellín Añejo 12 Años", desc: "", price: "$200.000", img: "" },
-    { name: "Ron Zacapa Centenario 12 Años", desc: "", price: "$320.000", img: "" },
-    { name: "Ron La Hechicera Reserva Familiar", desc: "", price: "$340.000", img: "" },
+    { name: "Ron Medellín Añejo 12 Años", desc: "", price: "$200.000", img: "IMAGENES/med.jpg" },
+    { name: "Ron Zacapa Centenario 12 Años", desc: "", price: "$320.000", img: "IMAGENES/zaca.jpg" },
+    { name: "Ron La Hechicera Reserva Familiar", desc: "", price: "$340.000", img: "IMAGENES/ronla.jpg" },
   ],
 
   GINEBRAS: [
-    { name: "Ginebra Tanqueray London Dry Gin - 750 ml", desc: "", price: "$300.000", img: "" },
-    { name: "Ginebra Hendrick’s Gin - 750 ml", desc: "", price: "$470.000", img: "" },
+    { name: "Ginebra Tanqueray London Dry Gin - 750 ml", desc: "", price: "$300.000", img: "IMAGENES/gitan.jpg" },
+    { name: "Ginebra Hendrick’s Gin - 750 ml", desc: "", price: "$470.000", img: "IMAGENES/gihen.jpg" },
   ],
 
   TEQUILAS: [
