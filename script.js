@@ -7,7 +7,7 @@ const itemsContainer = document.getElementById('itemsContainer');
 
 let modal = null;
 
-const IMG_V ="27"
+const IMG_V ="28"
 // Base de datos
 const data = {
   Entradas: [
