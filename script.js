@@ -7,7 +7,7 @@ const itemsContainer = document.getElementById('itemsContainer');
 
 let modal = null;
 
-const IMG_V ="28"
+const IMG_V ="29"
 // Base de datos
 const data = {
   Entradas: [
@@ -98,9 +98,9 @@ const data = {
   ],
 
   bebidas: [
-    { name: "Agua Hatsu", desc: "", price: "$7.500", img: "IMAGENES/AGUA1.jpg" },
+    { name: "Agua Hatsu", desc: "", price: "$7.500", img: "IMAGENES/aguaa.jpg" },
     { name: "Soda Bretaña", desc: "", price: "$8.900", img: "IMAGENES/bretaña.jpg" },
-    { name: "Pepsi", desc: "", price: "$8.900", img: "IMAGENES/pepsi.jpg" },
+    { name: "Pepsi", desc: "", price: "$8.900", img: "IMAGENES/pepsii.jpg" },
     { name: "Ginger Canada Dry", desc: "", price: "$8.900", img: "IMAGENES/canadry.jpg" },
     { name: "Soda Hatsu", desc: "", price: "$10.900", img: "" },
     { name: "Te Hatsu", desc: "", price: "$10.900", img: "" },
@@ -167,7 +167,7 @@ const data = {
   WHISKYS: [
     { name: "Buchanan’s Deluxe 12 años 750 ml", desc: "", price: "$340.000", img: "IMAGENES/bucdel.jpg" },
     { name: "Buchanan’s Master 750 ml", desc: "", price: "$390.000", img: "IMAGENES/bucm.jpg" },
-    { name: "Buchanan’s 10 años 750 ml", desc: "", price: "$650.000", img: "" },
+    { name: "Buchanan’s 18 años 750 ml", desc: "", price: "$650.000", img: "IMAGENES/bucd.jpg" },
     { name: "Old Parr 12 años 750 ml", desc: "", price: "$330.000", img: "IMAGENES/oldp.jpg" },
     { name: "Whisky Johnnie Walker Black Label", desc: "", price: "$330.000", img: "IMAGENES/jonie.jpg" },
     { name: "The Glenlivet Single Malt Scotch Whisky", desc: "", price: "$320.000", img: "IMAGENES/glenli.jpg" },
@@ -187,12 +187,12 @@ const data = {
   ],
 
   TEQUILAS: [
-    { name: "José Cuervo Especial Reposado - 750 ml", desc: "", price: "$250.000", img: "" },
-    { name: "Tequila Patrón Silver - 750 ml", desc: "", price: "$450.000", img: "" },
-    { name: "Tequila 1800 Reposado - 750 ml", desc: "", price: "$450.000", img: "" },
-    { name: "Tequila Don Julio Blanco - 750 ml", desc: "", price: "$470.000", img: "" },
-    { name: "Tequila Don Julio Reposado - 750 ml", desc: "", price: "$490.000", img: "" },
-    { name: "Tequila Don Julio 70 Cristalino - 750 ml", desc: "", price: "$650.000", img: "" },
+    { name: "José Cuervo Especial Reposado - 750 ml", desc: "", price: "$250.000", img: "IMAGENES/josc.jpg" },
+    { name: "Tequila Patrón Silver - 750 ml", desc: "", price: "$450.000", img: "IMAGENES/silp.jpg" },
+    { name: "Tequila 1800 Reposado - 750 ml", desc: "", price: "$450.000", img: "IMAGENES/ter.jpg" },
+    { name: "Tequila Don Julio Blanco - 750 ml", desc: "", price: "$470.000", img: "IMAGENES/teblanco.jpg" },
+    { name: "Tequila Don Julio Reposado - 750 ml", desc: "", price: "$490.000", img: "IMAGENES/tereposado.jpg" },
+    { name: "Tequila Don Julio 70 Cristalino - 750 ml", desc: "", price: "$650.000", img: "IMAGENES/tedoncri.jpg" },
   ],
 
   ADICIONALES: [
