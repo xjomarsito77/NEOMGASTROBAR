@@ -7,12 +7,12 @@ const itemsContainer = document.getElementById('itemsContainer');
 
 let modal = null;
 
-const IMG_V ="29"
+const IMG_V ="30"
 // Base de datos
 const data = {
   Entradas: [
     { name: "Fundido De Quesos", desc: "Mezcla de queso cheddar y queso blanco fundidos, acompañados de ragú de carne molida, cebolla encurtida y salsa de ajo.",
-       price: "$25.000", img: "IMAGENES/fundidoqueso.jpg" },
+      price: "$25.000", img: "IMAGENES/fundidoqueso.jpg" },
     { name: "Onion Rings", desc: "Doce (12) aros de cebolla crujientes, acompañados de salsa de pepinillo.", 
       price: "$27.000", img: "IMAGENES/onion.jpg" },
     { name: "Ceviche Neom", desc: "Cubos de tilapia marinados en leche de tigre, acompañados de salsa de cilantro, wonton crujiente, aguacate, cebolla encurtida y un toque de tajín. ", 
@@ -37,11 +37,11 @@ const data = {
     { name: "Lomo Saltado ", desc: "Arroz saltado con cebolla larga, zanahoria y cebollín chino, preparado con soya, jengibre, ajonjolí, ajinomoto y pasta de ajo. Acompañado de lomo en cubos, tomate, cebolla roja y papas a la francesa.", 
       price: "$35.000", img: "" },
     { name: "Pollo Cremoso", desc: "Arroz saltado con cebolla roja, tocineta y champiñones, preparado con crema de leche, soya y ajinomoto, terminado con queso parmesano. Acompañado de pechuga de pollo y cebollín chino.", 
-      price: "$35.000", img: "" },
+      price: "$32.000", img: "" },
     { name: "Lomo Cremoso", desc: "Arroz saltado con cebolla roja, tocineta y champiñones, preparado con crema de leche, soya y ajinomoto, terminado con queso parmesano. Acompañado de lomo y cebollín chino.", 
       price: "$35.000", img: "IMAGENES/lomocremoso.jpg" },
     { name: "Wok Neom", desc: "Arroz saltado con cebolla larga, zanahoria y cebollín chino, preparado con pasta de ajo, soya, jengibre, ajonjolí y ajinomoto. Acompañado de cubos de pollo y lomo, medio chorizo artesanal de cerdo, raíz china, wonton frito y chicharrón.", 
-      price: "$45.000", img: "IMAGENES/wokneom.jpg" },
+      price: "$40.000", img: "IMAGENES/wokneom.jpg" },
   ],
 
   CORTES_CARNES: [
@@ -102,8 +102,8 @@ const data = {
     { name: "Soda Bretaña", desc: "", price: "$8.900", img: "IMAGENES/bretaña.jpg" },
     { name: "Pepsi", desc: "", price: "$8.900", img: "IMAGENES/pepsii.jpg" },
     { name: "Ginger Canada Dry", desc: "", price: "$8.900", img: "IMAGENES/canadry.jpg" },
-    { name: "Soda Hatsu", desc: "", price: "$10.900", img: "" },
-    { name: "Te Hatsu", desc: "", price: "$10.900", img: "" },
+    { name: "Soda Hatsu", desc: "", price: "$10.900", img: "IMAGENES/sodah.jpg" },
+    { name: "Te Hatsu", desc: "", price: "$10.900", img: "IMAGENES/te.jpg" },
     { name: "Jugo de Mandarina", desc: "", price: "$11.900", img: "" },
     { name: "Limonada Cerezada", desc: "", price: "$11.900", img: "" },
     { name: "Limonada Coco", desc: "", price: "$11.900", img: "" },
@@ -141,7 +141,7 @@ const data = {
     { name: "Mint Julep", desc: "Bourbon, azúcar y menta fresca.", price: "$32.000", img: "" },
     { name: "Vodka Sunsire", desc: "Vodka, zumo de naranja y granadina", price: "$32.000", img: "" },
     { name: "Moscow Mule", desc: "Vodka, zumo de limón y Ginger beer", price: "$33.000", img: "" },
-    { name: "Coctel Neom", desc: "Smirnoff de tamarindo, tequila Plata, syrup de frutos rojos", price: "$35.000", img: "" },
+    { name: "Coctel Neom", desc: "", price: "$35.000", img: "" },
     { name: "Boulevardier", desc: "Bourbon, Campari y Vermouth dulce.", price: "$36.000", img: "" },
     { name: "Old Fashioned", desc: "Whisky Bourbon, amargo de Angostura, azúcar y piel de naranja.", price: "$38.000", img: "" },
     { name: "Negroni", desc: "Gin, Campari y Vermouth dulce.", price: "$38.000", img: "" },
@@ -150,12 +150,12 @@ const data = {
   ],
 
   VINOS: [
-    { name: "Copa vino tinto", desc: "", price: "$32.900", img: "" },
-    { name: "Copa vino blanco", desc: "", price: "$32.900", img: "" },
-    { name: "Copa vino rosado", desc: "", price: "$32.900", img: "" },
-    { name: "Botella vino tinto", desc: "", price: "$130.000", img: "" },
-    { name: "Botella vino blanco", desc: "", price: "$130.000", img: "" },
-    { name: "Botella vino rosado", desc: "", price: "$130.000", img: "" },
+    { name: "Copa vino tinto", desc: "", price: "$32.900", img: "IMAGENES/copt.jpg" },
+    { name: "Copa vino blanco", desc: "", price: "$32.900", img: "IMAGENES/copb.jpg" },
+    { name: "Copa vino rosado", desc: "", price: "$32.900", img: "IMAGENES/copr.jpg" },
+    { name: "Botella vino tinto", desc: "", price: "$130.000", img: "IMAGENES/vint.jpg" },
+    { name: "Botella vino blanco", desc: "", price: "$130.000", img: "IMAGENES/vinb.jpg" },
+    { name: "Botella vino rosado", desc: "", price: "$130.000", img: "IMAGENES/vinr.jpg" },
   ],
 
   AGUARDIENTES: [
