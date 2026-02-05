@@ -7,7 +7,7 @@ const itemsContainer = document.getElementById('itemsContainer');
 
 let modal = null;
 
-const IMG_V ="30"
+const IMG_V ="31"
 // Base de datos
 const data = {
   Entradas: [
@@ -45,7 +45,7 @@ const data = {
   ],
 
   CORTES_CARNES: [
-    { name: "Pechuga de Pollo", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$39.000", img: "" },
+    { name: "Pechuga de Pollo", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$39.000", img: "IMAGENES/pechuga.jpg" },
     { name: "Lomo de Cerdo", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$45.000", img: "" },
     { name: "Baby Beef", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$50.000", img: "" },
     { name: "Costillas BBQ", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$57.000", img: "IMAGENES/costillasbbq.jpg" },
@@ -62,15 +62,15 @@ const data = {
 
   BURGERS: [
     { name: "Chori Burger", desc: "Pan artellano con carne de chorizo, queso mozzarella, salsa chipotle, tomate y lechuga. Acompañada de papas a la francesa.", 
-      price: "$37.000", img: "" },
+      price: "$37.000", img: "IMAGENES/chori.jpg" },
     { name: "Burger Crispy Cesar", desc: "Pan artellano con pechuga apanada, queso mozzarella y salsa de ajo, acompañada de mix de lechugas con parmesano y salsa de ajo. Servida con papas a la francesa.",
       price: "$37.000", img: "IMAGENES/crisp.jpg" },
     { name: "Cheese Bacon Burger", desc: "Pan artellano con carne burger, queso amarillo, tocineta, cebolla roja fresca y pepinillos, con salsa de la casa. Acompañada de papas a la francesa.", 
-      price: "$38.000", img: "" },
+      price: "$38.000", img: "IMAGENES/bacon.jpg" },
     { name: "Burger OG", desc: "Pan artellano con carne burger, queso cheddar y mozzarella, chorizo artesanal de cerdo, tocineta, lechuga y tomate, acompañada de salsa chipotle, salsa de la casa y dip dulce & salado. Servida con papas a la francesa.",
        price: "$38.000", img: "IMAGENES/burgerog.jpg" },
     { name: "Spicy & Sweet Burger", desc: "Pan artellano con carne burger, queso mozzarella, pimentones caramelizados y salsa de la casa, acompañada de lechuga y tomate. Servida con papas a la francesa.",
-       price: "$39.000", img: "" },
+       price: "$39.000", img: "IMAGENES/spicy.jpg" },
     { name: "Burger Whopper", desc: "Pan artellano con carne burger, queso cheddar y mozzarella apanado, cebolla caramelizada, tocineta y salsa de la casa. Acompañada de papas a la francesa.",
        price: "$39.000", img: "IMAGENES/whop.jpg" },
     
@@ -78,11 +78,11 @@ const data = {
 
   SANDWICHES: [
     { name: "Sándwich de Pork Belly", desc: "Pan artellano con pork belly crujiente, salsa de ajo y cebolla encurtida. Acompañado de papas a la francesa.",
-       price: "$35.000", img: "" },
+       price: "$35.000", img: "IMAGENES/pork.jpg" },
     { name: "Sándwich de Lomo", desc: "Lomo fino con cebolla roja, queso mozzarella, pepinillos y salsa de queso azul. Acompañado de papas a la francesa.", 
       price: "$39.000", img: "" },
     { name: "Club Sándwich", desc: "Pan molde con pechuga de pollo, jamón de pavo, queso mozzarella, tocineta, lechuga y tomate, acompañado de salsa de la casa. Acompañado de papas a la francesa.", 
-      price: "$48.000", img: "" },
+      price: "$48.000", img: "IMAGENES/clubss.jpg" },
   ],
 
   KIDS: [
