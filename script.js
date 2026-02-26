@@ -20,7 +20,7 @@ const data = {
     { name: "Nachos Carne Molida", desc: "Totopos crujientes cubiertos con carne molida, queso amarillo y queso blanco, acompañados de pico de gallo, guacamole, sour cream y jalapeños.", 
       price: "$30.000", img: "IMAGENES/nachoscarne.jpg" },
     { name: "Mozzarella Fingers", desc: "Ocho (8) palitos de mozzarella apanados y dorados, acompañados de salsa napolitana. ", 
-      price: "$30.000", img: "" },
+      price: "$30.000", img: "IMAGENES/mozzafin.jpg" },
     { name: "Mini Hot Dog x3", desc: "Tres (3) mini hot dogs en pan artellano, con salchicha ranchera, salsa de ajo, dip dulce y salado, y salsa de la casa.", 
       price: "$30.000", img: "IMAGENES/triodog.jpg" },  
     { name: "Mini Choripanes x3", desc: "Tres (3) mini choripanes en pan artellano, con chorizo, salsa de ajo y chimichurri.", 
@@ -33,30 +33,30 @@ const data = {
 
   ALMUERZOS: [
     { name: "Pollo Saltado ", desc: "Arroz saltado con cebolla larga, zanahoria y cebollín chino, preparado con soya, jengibre, ajonjolí, ajinomoto y pasta de ajo. Acompañado de pollo en cubos, tomate, cebolla roja y papas a la francesa.", 
-      price: "$32.000", img: "" },
+      price: "$32.000", img: "IMAGENES/pollosal.jpg" },
     { name: "Lomo Saltado ", desc: "Arroz saltado con cebolla larga, zanahoria y cebollín chino, preparado con soya, jengibre, ajonjolí, ajinomoto y pasta de ajo. Acompañado de lomo en cubos, tomate, cebolla roja y papas a la francesa.", 
-      price: "$35.000", img: "" },
+      price: "$35.000", img: "IMAGENES/lomosal.jpg" },
     { name: "Pollo Cremoso", desc: "Arroz saltado con cebolla roja, tocineta y champiñones, preparado con crema de leche, soya y ajinomoto, terminado con queso parmesano. Acompañado de pechuga de pollo y cebollín chino.", 
-      price: "$32.000", img: "" },
+      price: "$32.000", img: "IMAGENES/lomocremoso.jpg" },
     { name: "Lomo Cremoso", desc: "Arroz saltado con cebolla roja, tocineta y champiñones, preparado con crema de leche, soya y ajinomoto, terminado con queso parmesano. Acompañado de lomo y cebollín chino.", 
-      price: "$35.000", img: "IMAGENES/lomocremoso.jpg" },
+      price: "$35.000", img: "IMAGENES/lomocre.jpg" },
     { name: "Wok Neom", desc: "Arroz saltado con cebolla larga, zanahoria y cebollín chino, preparado con pasta de ajo, soya, jengibre, ajonjolí y ajinomoto. Acompañado de cubos de pollo y lomo, medio chorizo artesanal de cerdo, raíz china, wonton frito y chicharrón.", 
       price: "$40.000", img: "IMAGENES/wokneom.jpg" },
   ],
 
   CORTES_CARNES: [
-    { name: "Pechuga de Pollo", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$39.000", img: "IMAGENES/pechuga.jpg" },
-    { name: "Lomo de Cerdo", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$45.000", img: "" },
-    { name: "Baby Beef", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$50.000", img: "" },
+    { name: "Pechuga de Pollo", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$39.000", img: "IMAGENES/pechugacorte.jpg" },
+    { name: "Lomo de Cerdo", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$45.000", img: "IMAGENES/pechuga.jpg" },
+    { name: "Baby Beef", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$50.000", img: "IMAGENES/baby.jpg" },
     { name: "Costillas BBQ", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$57.000", img: "IMAGENES/costillasbbq.jpg" },
-    { name: "Picanha", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$80.000", img: "" },
-    { name: "New York", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$95.000", img: "" },
-    { name: "Rib Eye", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$100.000", img: "" },
+    { name: "Picanha", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$80.000", img: "IMAGENES/cortepica.jpg" },
+    { name: "New York", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$95.000", img: "IMAGENES/newyork.jpg" },
+    { name: "Rib Eye", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$100.000", img: "IMAGENES/ribeye.jpg" },
   ],
 
   COMPARTIR: [
     { name: "Parrillada Neom", desc: " (5) Tenders de pollo y (5) de pescado, costilla BBQ, chorizo, picanha y chicharrón, acompañados de papas casco, salsa NEOM, salsa de ajo, pico de gallo y chimichurri.",
-       price: "$150.000", img: "" },
+       price: "$150.000", img: "IMAGENES/parrillada.jpg" },
     
   ],
 
@@ -80,16 +80,16 @@ const data = {
     { name: "Sándwich de Pork Belly", desc: "Pan artellano con pork belly crujiente, salsa de ajo y cebolla encurtida. Acompañado de papas a la francesa.",
        price: "$35.000", img: "IMAGENES/pork.jpg" },
     { name: "Sándwich de Lomo", desc: "Lomo fino con cebolla roja, queso mozzarella, pepinillos y salsa de queso azul. Acompañado de papas a la francesa.", 
-      price: "$39.000", img: "" },
+      price: "$39.000", img: "IMAGENES/sandwichlomo.jpg" },
     { name: "Club Sándwich", desc: "Pan molde con pechuga de pollo, jamón de pavo, queso mozzarella, tocineta, lechuga y tomate, acompañado de salsa de la casa. Acompañado de papas a la francesa.", 
       price: "$48.000", img: "IMAGENES/clubss.jpg" },
   ],
 
   KIDS: [
     { name: "Chiken tenders", desc: "Tiras de pollo apanado x6, salsa de tomate, papas a la francesa.", 
-      price: "$25.000", img: "" },
+      price: "$25.000", img: "IMAGENES/chikenkids.jpg" },
     { name: "Cheese burger", desc: "Carne Burger, queso cheddar, salsa de tomate, papas a la francesa.",
-       price: "$25.000", img: "" },
+       price: "$25.000", img: "IMAGENES/burgerkids.jpg" },
   ],
 
    POSTRES: [
