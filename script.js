@@ -7,7 +7,7 @@ const itemsContainer = document.getElementById('itemsContainer');
 
 let modal = null;
 
-const IMG_V ="31"
+const IMG_V ="32"
 // Base de datos
 const data = {
   Entradas: [
@@ -19,7 +19,7 @@ const data = {
       price: "$30.000", img: "IMAGENES/cevicheneom.jpg" },
     { name: "Nachos Carne Molida", desc: "Totopos crujientes cubiertos con carne molida, queso amarillo y queso blanco, acompañados de pico de gallo, guacamole, sour cream y jalapeños.", 
       price: "$30.000", img: "IMAGENES/nachoscarne.jpg" },
-    { name: "Mozzarella Fingers", desc: "Ocho (8) palitos de mozzarella apanados y dorados, acompañados de salsa napolitana. ", 
+    { name: "Mozzarella Fingers", desc: "(6) palitos de mozzarella apanados y dorados, acompañados de salsa napolitana. ", 
       price: "$30.000", img: "IMAGENES/mozzafin.jpg" },
     { name: "Mini Hot Dog x3", desc: "Tres (3) mini hot dogs en pan artellano, con salchicha ranchera, salsa de ajo, dip dulce y salado, y salsa de la casa.", 
       price: "$30.000", img: "IMAGENES/triodog.jpg" },  
@@ -125,7 +125,7 @@ const data = {
     { name: "Heineken", desc: "", price: "$12.900", img: "IMAGENES/hei.jpg" },
     { name: "Corona Extra", desc: "", price: "$13.900", img: "IMAGENES/coro.jpg" },
     { name: "Stella Artois", desc: "", price: "$14.900", img: "IMAGENES/ste.jpg" },
-    { name: "Smirnoff Ice", desc: "", price: "$15.900", img: "" },
+    { name: "Smirnoff Ice", desc: "", price: "$15.900", img: "IMAGENES/smirnof.jpg" },
   ],
 
   COCTEL: [
