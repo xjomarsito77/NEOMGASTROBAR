@@ -7,7 +7,7 @@ const itemsContainer = document.getElementById('itemsContainer');
 
 let modal = null;
 
-const IMG_V ="34"
+const IMG_V ="35"
 // Base de datos
 const data = {
   Entradas: [
@@ -131,7 +131,7 @@ const data = {
   COCTEL: [
     { name: "Margarita", desc: "", price: "$28.000", img: "" },
     { name: "Daiquiri", desc: "Ron blanco, zumo de lima y azúcar.", price: "$28.000", img: "" },
-    { name: "Cosmopolitan", desc: "Vodka, triple sec, zumo de limón, zumo de arándanos. ", price: "$29.000", img: "" },
+    { name: "Cosmopolitan", desc: "Vodka, triple sec, zumo de limón, zumo de arándanos. ", price: "$32.000", img: "" },
     { name: "Mojito", desc: "Ron blanco, azúcar, yerbabuena y soda.", price: "$29.000", img: "" },
     { name: "Americano", desc: "Campari, Vermouth dulce y soda. ", price: "$30.000", img: "" },
     { name: "Tom Collins", desc: "Gin, zumo de limón, azúcar y soda.", price: "$30.000", img: "" },
