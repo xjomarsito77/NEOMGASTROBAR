@@ -7,7 +7,7 @@ const itemsContainer = document.getElementById('itemsContainer');
 
 let modal = null;
 
-const IMG_V ="35"
+const IMG_V ="36"
 // Base de datos
 const data = {
   Entradas: [
@@ -28,7 +28,7 @@ const data = {
     { name: "Ronda De Tacos x3", desc: "Tres (3) tacos surtidos: pollo crispy con salsa de ajo, aguacate y cebolla encurtida; cochinita con salsa BBQ y chipotle; y carne asada con cebolla roja y pico de gallo.", 
       price: "$35.000", img: "IMAGENES/tacos.jpg" },
     { name: "Mini Burger x3", desc: "Receta del chef.", 
-      price: "$36.000", img: "IMAGENES/triomini.jpg" },
+      price: "$36.000", img: "IMAGENES/triomin.png" },
   ],
 
   ALMUERZOS: [
