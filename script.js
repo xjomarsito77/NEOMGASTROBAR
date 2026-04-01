@@ -7,7 +7,7 @@ const itemsContainer = document.getElementById('itemsContainer');
 
 let modal = null;
 
-const IMG_V ="36"
+const IMG_V ="37"
 // Base de datos
 const data = {
   Entradas: [
@@ -30,6 +30,10 @@ const data = {
     { name: "Mini Burger x3", desc: "Receta del chef.", 
       price: "$36.000", img: "IMAGENES/triomin.png" },
   ],
+  ENSALADAS: [
+    { name: "Ensalada César", desc: "Mix de lechugas, croutones, queso parmesano y salsa César. Acompañada de pechuga de pollo crispy o a la plancha.", 
+      price: "$35.000", img: "IMAGENES/ensalada.jpg" },
+  ],
 
   ALMUERZOS: [
     { name: "Pollo Saltado ", desc: "Arroz saltado con cebolla larga, zanahoria y cebollín chino, preparado con soya, jengibre, ajonjolí, ajinomoto y pasta de ajo. Acompañado de pollo en cubos, tomate, cebolla roja y papas a la francesa.", 
@@ -40,8 +44,12 @@ const data = {
       price: "$39.000", img: "IMAGENES/lomocremoso.jpg" },
     { name: "Lomo Cremoso", desc: "Arroz saltado con cebolla roja, tocineta y champiñones, preparado con crema de leche, soya y ajinomoto, terminado con queso parmesano. Acompañado de lomo y cebollín chino.", 
       price: "$40.000", img: "IMAGENES/lomocre.jpg" },
+    { name: "Arroz de Camaron y Chorizo", desc: "Arroz saltado con cebolla larga, zanahoria y cebollín chino, preparado con pasta de ajo, soya, jengibre, ajonjolí y ajinomoto. Acompañado de camarones salteados con chorizo artesanal de cerdo.", 
+      price: "$43.000", img: "IMAGENES/arrozcama.jpg" },
     { name: "Wok Neom", desc: "Arroz saltado con cebolla larga, zanahoria y cebollín chino, preparado con pasta de ajo, soya, jengibre, ajonjolí y ajinomoto. Acompañado de cubos de pollo y lomo, medio chorizo artesanal de cerdo, raíz china, wonton frito y chicharrón.", 
       price: "$50.000", img: "IMAGENES/wokneom.jpg" },
+    { name: "Salmon Neom", desc: "Arroz saltado con cebolla roja, tocineta y champiñones, preparado con crema de leche, soya y ajinomoto, terminado con queso parmesano. Acompañado de salmón en salsa teriyaki.", 
+      price: "$57.000", img: "IMAGENES/salmonew.jpg" },
   ],
 
   CORTES_CARNES: [
@@ -53,6 +61,10 @@ const data = {
     { name: "New York", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$100.000", img: "IMAGENES/newyork.jpg" },
     { name: "Rib Eye", desc: "Papas a la francesa o cascos, con ensalada coleslaw.", price: "$110.000", img: "IMAGENES/ribeye.jpg" },
   ],
+  PASTAS: [
+    { name: "Pasta Boloñesa", desc: "Fettuccine con salsa boloñesa de carne molida, tomate, cebolla, zanahoria y apio, preparado con pasta de ajo, soya, jengibre. Terminado con queso parmesano.", 
+      price: "$38.000", img: "IMAGENES/pastabolo.jpg" },
+  ],
 
   COMPARTIR: [
     { name: "Parrillada Neom", desc: " (5) Tenders de pollo y (5) de pescado, costilla BBQ, chorizo, picanha y chicharrón, acompañados de papas casco, salsa NEOM, salsa de ajo, pico de gallo y chimichurri.",
@@ -61,6 +73,8 @@ const data = {
   ],
 
   BURGERS: [
+    { name: "La jefa", desc: "Pan artellano con filete de pescado apanado, cebolla cevichada. Acompañada de papas a la francesa, salsa de la casa y salsa de ajo.", 
+      price: "$36.000", img: "IMAGENES/jefaham.png" },
     { name: "Chori Burger", desc: "Pan artellano con carne de chorizo, queso mozzarella, salsa chipotle, tomate y lechuga. Acompañada de papas a la francesa.", 
       price: "$45.000", img: "IMAGENES/chori.jpg" },
     { name: "Burger Crispy Cesar", desc: "Pan artellano con pechuga apanada, queso mozzarella y salsa de ajo, acompañada de mix de lechugas con parmesano y salsa de ajo. Servida con papas a la francesa.",
@@ -73,7 +87,14 @@ const data = {
        price: "$45.000", img: "IMAGENES/spicy.jpg" },
     { name: "Burger Whopper", desc: "Pan artellano con carne burger, queso cheddar y mozzarella apanado, cebolla caramelizada, tocineta y salsa de la casa. Acompañada de papas a la francesa.",
        price: "$46.000", img: "IMAGENES/whop.jpg" },
+    { name: "The big boss ", desc: "Pan artellano con doble carne burger, doble queso cheddar, doble tocineta y salsa de la casa. Acompañada de papas a la francesa.",
+       price: "$46.000", img: "IMAGENES/hamburguesan.png" },
     
+  ],
+
+  HOTDOG: [
+    { name: "Hot Dog Suizo ", desc: "Pan artellano con salchicha suiza, queso mozzarella, chimichurri. Acompañado de papas a la francesa y salsa de la casa.", 
+      price: "$35.000", img: "IMAGENES/dogsuizo.jpg" },
   ],
 
   SANDWICHES: [
@@ -104,14 +125,14 @@ const data = {
     { name: "Ginger Canada Dry", desc: "", price: "$8.900", img: "IMAGENES/canadry.jpg" },
     { name: "Soda Hatsu", desc: "", price: "$10.900", img: "IMAGENES/sodah.jpg" },
     { name: "Te Hatsu", desc: "", price: "$10.900", img: "IMAGENES/te.jpg" },
-    { name: "Jugo de Mandarina", desc: "", price: "$11.900", img: "" },
+    { name: "Jugo de Mandarina", desc: "", price: "$11.900", img: "IMAGENES/mandarina.jpg" },
     { name: "Limonada Cerezada", desc: "", price: "$11.900", img: "IMAGENES/cerezada.jpg" },
     { name: "Limonada Coco", desc: "", price: "$11.900", img: "IMAGENES/coco.jpg" },
     { name: "Limonada Hierbabuena", desc: "", price: "$11.900", img: "IMAGENES/hierbabuena.jpg" },
     { name: "Soda Frutos rojos", desc: "Todas nuestras sodas están elaboradas a base de Hatsu.", price: "$18.900", img: "IMAGENES/frutorojo.jpg" },
     { name: "Soda Frutos Amarillos", desc: "Todas nuestras sodas están elaboradas a base de Hatsu.", price: "$18.900", img: "IMAGENES/amarillo.jpg" },
     { name: "Soda de Lyche", desc: "Todas nuestras sodas están elaboradas a base de Hatsu.", price: "$18.900", img: "IMAGENES/liche.jpg" },
-    { name: "Soda Lulo house", desc: "Todas nuestras sodas están elaboradas a base de Hatsu.", price: "$18.900", img: "" },
+    { name: "Soda Lulo house", desc: "Todas nuestras sodas están elaboradas a base de Hatsu.", price: "$18.900", img: "IMAGENES/slulo.jpg" },
     { name: "Red Bull", desc: "", price: "$15.900", img: "IMAGENES/redbull.jpg" },
     { name: "Red Bull Sugarfree", desc: "", price: "$15.900", img: "IMAGENES/redbul2.jpg" },
     { name: "Red Bull edition red", desc: "", price: "$15.900", img: "IMAGENES/redbulr.jpg" },
