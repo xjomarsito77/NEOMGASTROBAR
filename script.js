@@ -7,7 +7,7 @@ const itemsContainer = document.getElementById('itemsContainer');
 
 let modal = null;
 
-const IMG_V ="37"
+const IMG_V ="38"
 // Base de datos
 const data = {
   Entradas: [
@@ -93,6 +93,10 @@ const data = {
   ],
 
   HOTDOG: [
+    { name: "Hot Dog Americano ", desc: "Pan artesanal con salchicha americana, cebolla blanca, relish, salsa de la casa y papita ripio. Acompañado de papas a la francesa y salsa de la casa.", 
+      price: "$25.000", img: "IMAGENES/americano.jpg" },
+    { name: "Hot Dog Neom ", desc: "Pan artellano con salchicha ranchera, salsa de ajo, dip dulce y salado. Acompañado de papas a la francesa y salsa de la casa.", 
+      price: "$28.000", img: "IMAGENES/dogneom.jpg" },
     { name: "Hot Dog Suizo ", desc: "Pan artellano con salchicha suiza, queso mozzarella, chimichurri. Acompañado de papas a la francesa y salsa de la casa.", 
       price: "$35.000", img: "IMAGENES/dogsuizo.jpg" },
   ],
