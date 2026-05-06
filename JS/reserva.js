@@ -11,6 +11,8 @@ const reservaCategoryTitle = document.getElementById('reservaCategoryTitle');
 
 let reservaModal = null;
 
+const IMG_V = "38";
+
 /* =========================
    DATA INDEPENDIENTE
 ========================= */
@@ -29,7 +31,6 @@ const reservaData = {
       img: ""
     }
   ],
-
   BURGERS: [
     {
       name: "Burger VIP",
@@ -38,7 +39,6 @@ const reservaData = {
       img: "IMAGENES/burgerog.jpg"
     }
   ],
-
   HOTDOG: [
     {
       name: "Hot Dog Especial",
@@ -49,41 +49,15 @@ const reservaData = {
   ]
 };
 
-/* =========================
-   FUNCIONES
-========================= */
-function abrirReserva() {
-  reservaPanel.style.display = 'flex';
+/* ===============================
+   RESET SCROLL (CLAVE MÓVIL)
+=============================== */
+function resetReservaScroll({ sidebar = true, content = true } = {}) {
+  const side = reservaPanel.querySelector('.sidebar');
+  const cont = reservaPanel.querySelector('.menu-content');
 
-  // 👇 fuerza reflow (importante)
-  reservaPanel.offsetHeight;
-
-  reservaPanel.classList.add('show');
-
-  renderReservaCategory('Entradas');
-
-  reservaCategoryList.querySelectorAll('li').forEach(li => {
-    li.classList.toggle('active', li.dataset.category === 'Entradas');
-  });
-}
-
-function cerrarReserva() {
-  reservaPanel.classList.remove('show');
-
-  setTimeout(() => {
-    reservaPanel.style.display = 'none';
-  }, 400);
-}
-
-/* =========================
-   RESET SCROLL
-========================= */
-function resetReservaScroll() {
-  const sidebar = reservaPanel.querySelector('.sidebar');
-  const content = reservaPanel.querySelector('.menu-content');
-
-  if (sidebar) sidebar.scrollTop = 0;
-  if (content) content.scrollTop = 0;
+  if (sidebar && side) side.scrollTop = 0;
+  if (content && cont) cont.scrollTop = 0;
 }
 
 /* =========================
@@ -100,8 +74,8 @@ function renderReservaCategory(cat) {
         <div class="item-media">
           ${
             item.img
-              ? `<img src="${item.img}" alt="${item.name}" 
-                   onerror="this.parentElement.innerHTML='<div class=\\'no-img\\'></div>'">`
+              ? `<img src="${item.img}?v=${IMG_V}" alt="${item.name}" loading="lazy"
+                   onerror="this.closest('.item-media').innerHTML='<div class=\\'no-img\\'></div>'">`
               : `<div class="no-img"></div>`
           }
         </div>
@@ -116,7 +90,7 @@ function renderReservaCategory(cat) {
     `)
     .join('');
 
-  resetReservaScroll();
+  resetReservaScroll({ sidebar: false, content: true });
 }
 
 /* =========================
@@ -132,7 +106,7 @@ function openReservaModal(cat, i) {
   reservaModal.innerHTML = `
     <div class="modal-content">
       <button class="close-modal">✕</button>
-      ${item.img ? `<img src="${item.img}">` : ""}
+      ${item.img ? `<img src="${item.img}?v=${IMG_V}">` : ""}
       <h2>${item.name}</h2>
       <h3>${item.price}</h3>
       <p>${item.desc}</p>
@@ -157,17 +131,8 @@ function closeReservaModal() {
 }
 
 /* =========================
-   EVENTOS
+   EVENTO VER
 ========================= */
-
-// 👇 CLAVE: SOPORTE MÓVIL
-reservaBtn.addEventListener('click', abrirReserva);
-reservaBtn.addEventListener('touchstart', abrirReserva);
-
-closeReserva.addEventListener('click', cerrarReserva);
-closeReserva.addEventListener('touchstart', cerrarReserva);
-
-// VER
 reservaItemsContainer.addEventListener('click', e => {
   if (e.target.classList.contains('ver-btn')) {
     openReservaModal(
@@ -177,7 +142,9 @@ reservaItemsContainer.addEventListener('click', e => {
   }
 });
 
-// CATEGORÍAS
+/* =========================
+   CATEGORÍAS
+========================= */
 reservaCategoryList.addEventListener('click', e => {
   const li = e.target.closest('li');
   if (!li) return;
@@ -189,5 +156,60 @@ reservaCategoryList.addEventListener('click', e => {
 
   renderReservaCategory(li.dataset.category);
 
-  li.scrollIntoView({ block: 'nearest' });
+  li.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+});
+
+/* =========================
+   ABRIR (VERSIÓN MÓVIL CORRECTA)
+========================= */
+reservaBtn.addEventListener('click', () => {
+
+  reservaPanel.style.display = 'flex';
+
+  resetReservaScroll({ sidebar: true, content: true });
+
+  reservaPanel.offsetHeight; // 🔥 fuerza render (CLAVE)
+  reservaPanel.classList.add('show');
+
+  renderReservaCategory('Entradas');
+
+  reservaCategoryList.querySelectorAll('li').forEach(li => {
+    li.classList.toggle('active', li.dataset.category === 'Entradas');
+  });
+
+  history.pushState(null, '', '#reserva');
+});
+
+/* =========================
+   CERRAR
+========================= */
+closeReserva.addEventListener('click', () => {
+
+  renderReservaCategory('Entradas');
+
+  reservaCategoryList.querySelectorAll('li').forEach(li => {
+    li.classList.toggle('active', li.dataset.category === 'Entradas');
+  });
+
+  resetReservaScroll({ sidebar: true, content: true });
+
+  reservaPanel.classList.remove('show');
+
+  setTimeout(() => {
+    reservaPanel.style.display = 'none';
+  }, 400);
+
+  history.back();
+});
+
+/* =========================
+   BOTÓN ATRÁS DEL CELULAR
+========================= */
+window.addEventListener('popstate', () => {
+  if (reservaPanel.classList.contains('show')) {
+    reservaPanel.classList.remove('show');
+    setTimeout(() => {
+      reservaPanel.style.display = 'none';
+    }, 400);
+  }
 });
