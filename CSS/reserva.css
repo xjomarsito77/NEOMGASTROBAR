@@ -1,216 +1,6 @@
 /* =========================
-   RESET + BASE
+   RESERVA (SEGURO)
 ========================= */
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-/* =========================
-   BODY
-========================= */
-body {
-  font-family: 'Poppins', sans-serif;
-
-  background: url('IMAGENES/logoclarocom.jpg') no-repeat center center;
-  background-size: cover;
-
-  color: white;
-
-  min-height: 100vh;
-  min-height: 100dvh;
-
-  overflow-x: hidden;
-}
-
-/* =========================
-   OVERLAY
-========================= */
-.overlay{
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* =========================
-   CONTENEDOR PRINCIPAL
-========================= */
-.container {
-  position: relative;
-  z-index: 1;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 100vh;
-  min-height: 100dvh;
-
-  text-align: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-/* =========================
-   LOGO
-========================= */
-.logo img {
-  width: 320px;
-  border-radius: 10px;
-}
-
-/* =========================
-   BOTONES
-========================= */
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 80%;
-  max-width: 350px;
-}
-
-.btn {
-  background: #1e1e1e;
-  color: #fff;
-  padding: 15px;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: #cfa731;
-}
-
-/* =========================
-   PANEL MENÚ ORIGINAL
-========================= */
-.menu-panel {
-  position: fixed;
-  inset: 0;
-  display: none;
-  justify-content: center;
-  align-items: center;
-
-  background: url('IMAGENES/logoclarocom.jpg') no-repeat center center;
-  background-size: cover;
-
-  z-index: 999;
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: 0.4s;
-}
-
-.menu-panel.show {
-  display: flex;
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* =========================
-   CONTENEDOR
-========================= */
-.menu-container {
-  display: flex;
-  width: 90%;
-  max-width: 1200px;
-  height: 85%;
-
-  background: url("IMAGENES/cont.jpg") center / cover no-repeat;
-  position: relative;
-
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.menu-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-}
-
-/* =========================
-   SIDEBAR
-========================= */
-.sidebar {
-  width: 25%;
-  padding: 20px;
-  overflow-y: auto;
-
-  background: url("IMAGENES/sliderofi.jpg") no-repeat center center;
-  background-size: cover;
-}
-
-.sidebar h3 {
-  position: sticky;
-  top: 10px;
-  background: #c0392b;
-  padding: 10px;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.sidebar li {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.sidebar li.active {
-  background: #c07f2bde;
-}
-
-/* =========================
-   CONTENIDO
-========================= */
-.menu-content {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
-}
-
-.items {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 15px;
-}
-
-/* =========================
-   ITEMS
-========================= */
-.item {
-  background: #222;
-  border-radius: 12px;
-  padding: 10px;
-}
-
-.item-media {
-  width: 100%;
-  aspect-ratio: 4/3;
-  overflow: hidden;
-}
-
-.item-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* =========================
-   BOTÓN CERRAR
-========================= */
-.close-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
-/* =========================================================
-   🔴 NUEVO PANEL RESERVA (TOTALMENTE INDEPENDIENTE)
-========================================================= */
 
 .reserva-panel {
   position: fixed;
@@ -225,7 +15,7 @@ body {
   z-index: 1000;
   opacity: 0;
   transform: translateX(-100%);
-  transition: 0.4s;
+  transition: 0.4s ease;
 }
 
 .reserva-panel.show {
@@ -236,40 +26,42 @@ body {
 
 /* CONTENEDOR */
 .reserva-panel .menu-container {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  height: 85%;
+
   background: url("IMAGENES/cont.jpg") center / cover no-repeat;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.reserva-panel .menu-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.reserva-panel .menu-container > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* SIDEBAR */
 .reserva-panel .sidebar {
+  width: 25%;
+  padding: 20px;
+  overflow-y: auto;
+
   background: url("IMAGENES/sliderofi.jpg") no-repeat center center;
   background-size: cover;
 }
 
-/* =========================================================
-   📱 MOBILE (AQUÍ ESTABA TU PROBLEMA)
-========================================================= */
-
+/* MOBILE */
 @media (max-width: 768px) {
 
-  /* BODY */
-  body {
-    background-image: url("IMAGENES/fondopagcelcom.jpg");
-  }
-
-  /* ORIGINAL */
-  .menu-panel {
-    background-image: url("IMAGENES/fondopagcelcom.jpg");
-  }
-
-  .menu-container {
-    background-image: url("IMAGENES/contenedorcel.jpg");
-  }
-
-  .sidebar {
-    background-image: url("IMAGENES/slidercel.jpg");
-  }
-
-  /* 🔴 RESERVA (CLAVE QUE FALTABA) */
   .reserva-panel {
     background-image: url("IMAGENES/fondopagcelcom.jpg");
   }
@@ -280,24 +72,5 @@ body {
 
   .reserva-panel .sidebar {
     background-image: url("IMAGENES/slidercel.jpg");
-  }
-
-  /* LAYOUT */
-  .sidebar {
-    width: 34%;
-  }
-
-  .menu-content {
-    width: 66%;
-  }
-
-  .items {
-    grid-template-columns: 1fr;
-  }
-
-  /* BOTÓN */
-  .close-btn {
-    bottom: 15px;
-    top: auto;
   }
 }
