@@ -50,6 +50,32 @@ const reservaData = {
 };
 
 /* =========================
+   FUNCIONES
+========================= */
+function abrirReserva() {
+  reservaPanel.style.display = 'flex';
+
+  // 👇 fuerza reflow (importante)
+  reservaPanel.offsetHeight;
+
+  reservaPanel.classList.add('show');
+
+  renderReservaCategory('Entradas');
+
+  reservaCategoryList.querySelectorAll('li').forEach(li => {
+    li.classList.toggle('active', li.dataset.category === 'Entradas');
+  });
+}
+
+function cerrarReserva() {
+  reservaPanel.classList.remove('show');
+
+  setTimeout(() => {
+    reservaPanel.style.display = 'none';
+  }, 400);
+}
+
+/* =========================
    RESET SCROLL
 ========================= */
 function resetReservaScroll() {
@@ -131,8 +157,17 @@ function closeReservaModal() {
 }
 
 /* =========================
-   EVENTO VER
+   EVENTOS
 ========================= */
+
+// 👇 CLAVE: SOPORTE MÓVIL
+reservaBtn.addEventListener('click', abrirReserva);
+reservaBtn.addEventListener('touchstart', abrirReserva);
+
+closeReserva.addEventListener('click', cerrarReserva);
+closeReserva.addEventListener('touchstart', cerrarReserva);
+
+// VER
 reservaItemsContainer.addEventListener('click', e => {
   if (e.target.classList.contains('ver-btn')) {
     openReservaModal(
@@ -142,9 +177,7 @@ reservaItemsContainer.addEventListener('click', e => {
   }
 });
 
-/* =========================
-   CATEGORÍAS
-========================= */
+// CATEGORÍAS
 reservaCategoryList.addEventListener('click', e => {
   const li = e.target.closest('li');
   if (!li) return;
@@ -157,31 +190,4 @@ reservaCategoryList.addEventListener('click', e => {
   renderReservaCategory(li.dataset.category);
 
   li.scrollIntoView({ block: 'nearest' });
-});
-
-/* =========================
-   ABRIR
-========================= */
-reservaBtn.addEventListener('click', () => {
-  reservaPanel.style.display = 'flex';
-
-  reservaPanel.offsetHeight;
-  reservaPanel.classList.add('show');
-
-  renderReservaCategory('Entradas');
-
-  reservaCategoryList.querySelectorAll('li').forEach(li => {
-    li.classList.toggle('active', li.dataset.category === 'Entradas');
-  });
-});
-
-/* =========================
-   CERRAR
-========================= */
-closeReserva.addEventListener('click', () => {
-  reservaPanel.classList.remove('show');
-
-  setTimeout(() => {
-    reservaPanel.style.display = 'none';
-  }, 400);
 });
