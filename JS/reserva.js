@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const reservaPanel = document.getElementById('reservaPanel');
   const closeReserva = document.getElementById('closeReserva');
 
+  const reservaCategoryList = document.getElementById('reservaCategoryList');
   const reservaItemsContainer = document.getElementById('reservaItemsContainer');
   const reservaCategoryTitle = document.getElementById('reservaCategoryTitle');
 
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      PEDIDO
   ========================= */
-  let reservaPedido = [];
+  let pedido = [];
 
   /* =========================
      DATA
@@ -39,8 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
     PRUEBA: [
       {
         name: "Hamburguesa Especial",
-        desc: "Con papas y salsa",
-        price: "$35.000",
+        desc: "Con queso cheddar y papas",
+        price: "$38.000",
         img: "IMAGENES/fundidoqueso.jpg"
       }
     ],
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     PRUEBA2: [
       {
         name: "Hot Dog Premium",
-        desc: "Grande con tocineta",
+        desc: "Salchicha americana + bacon",
         price: "$28.000",
         img: "IMAGENES/fundidoqueso.jpg"
       }
@@ -65,7 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     reservaCategoryTitle.textContent = cat;
 
-    reservaItemsContainer.innerHTML = reservaData[cat].map((item, i) => `
+    reservaItemsContainer.innerHTML =
+      reservaData[cat].map((item, i) => `
+
       <div class="item">
 
         <div class="item-media">
@@ -86,11 +89,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <div class="item-buttons">
 
-            <button class="ver-btn" data-index="${i}" data-category="${cat}">
+            <button
+              class="ver-btn"
+              data-cat="${cat}"
+              data-index="${i}"
+            >
               VER
             </button>
 
-            <button class="reservar-btn" data-index="${i}" data-category="${cat}">
+            <button
+              class="reservar-btn"
+              data-cat="${cat}"
+              data-index="${i}"
+            >
               RESERVAR
             </button>
 
@@ -99,19 +110,23 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
       </div>
+
     `).join('');
 
-    /* =========================
-       EVENTOS BOTÓN VER
-    ========================= */
+    activarBotones(cat);
+  }
+
+  /* =========================
+     BOTONES
+  ========================= */
+  function activarBotones(cat) {
+
     document.querySelectorAll('.ver-btn').forEach(btn => {
 
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', () => {
 
-        const index = e.target.dataset.index;
-        const category = e.target.dataset.category;
-
-        const item = reservaData[category][index];
+        const index = btn.dataset.index;
+        const item = reservaData[cat][index];
 
         abrirModal(item);
 
@@ -119,73 +134,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    /* =========================
-       EVENTOS BOTÓN RESERVAR
-    ========================= */
     document.querySelectorAll('.reservar-btn').forEach(btn => {
 
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', () => {
 
-        const index = e.target.dataset.index;
-        const category = e.target.dataset.category;
+        const index = btn.dataset.index;
+        const item = reservaData[cat][index];
 
-        const item = reservaData[category][index];
-
-        agregarReserva(item);
+        agregarPedido(item);
 
       });
-
-    });
-
-  }
-
-  /* =========================
-     EVENTOS CATEGORÍAS
-  ========================= */
-  document.querySelectorAll('#reservaCategoryList li').forEach(li => {
-
-    li.addEventListener('click', () => {
-
-      document.querySelectorAll('#reservaCategoryList li')
-        .forEach(el => el.classList.remove('active'));
-
-      li.classList.add('active');
-
-      const category = li.dataset.category;
-
-      renderReservaCategory(category);
-
-    });
-
-  });
-
-  /* =========================
-     ABRIR PANEL
-  ========================= */
-  reservaBtn.addEventListener('click', () => {
-
-    reservaPanel.style.display = 'flex';
-
-    reservaPanel.offsetHeight;
-
-    reservaPanel.classList.add('show');
-
-    renderReservaCategory('Entradas');
-
-  });
-
-  /* =========================
-     CERRAR PANEL
-  ========================= */
-  if (closeReserva) {
-
-    closeReserva.addEventListener('click', () => {
-
-      reservaPanel.classList.remove('show');
-
-      setTimeout(() => {
-        reservaPanel.style.display = 'none';
-      }, 400);
 
     });
 
@@ -196,18 +154,17 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================= */
   function abrirModal(item) {
 
-    if (reservaModal) {
-      reservaModal.remove();
-    }
+    if (reservaModal) reservaModal.remove();
 
     reservaModal = document.createElement('div');
 
-    reservaModal.classList.add('modal');
+    reservaModal.className = 'modal show';
 
     reservaModal.innerHTML = `
+
       <div class="modal-content">
 
-        <button class="close-modal">&times;</button>
+        <button class="close-modal">✕</button>
 
         ${
           item.img
@@ -222,22 +179,27 @@ document.addEventListener("DOMContentLoaded", () => {
         <span class="price">${item.price}</span>
 
       </div>
+
     `;
 
     document.body.appendChild(reservaModal);
 
-    setTimeout(() => {
-      reservaModal.classList.add('show');
-    }, 10);
-
     reservaModal
       .querySelector('.close-modal')
-      .addEventListener('click', cerrarModal);
+      .addEventListener('click', () => {
+
+        reservaModal.remove();
+        reservaModal = null;
+
+      });
 
     reservaModal.addEventListener('click', (e) => {
 
       if (e.target === reservaModal) {
-        cerrarModal();
+
+        reservaModal.remove();
+        reservaModal = null;
+
       }
 
     });
@@ -245,104 +207,138 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     CERRAR MODAL
+     AGREGAR PEDIDO
   ========================= */
-  function cerrarModal() {
+  function agregarPedido(item) {
 
-    reservaModal.classList.remove('show');
+    pedido.push(item);
 
-    setTimeout(() => {
-
-      reservaModal.remove();
-
-      reservaModal = null;
-
-    }, 300);
+    actualizarBotonCarrito();
 
   }
 
   /* =========================
-     AGREGAR RESERVA
+     PANEL PEDIDO
   ========================= */
-  function agregarReserva(item) {
+  const panel = document.createElement('div');
 
-    const existe = reservaPedido.find(p => p.name === item.name);
+  panel.id = 'pedidoPanel';
 
-    if (existe) {
-      existe.cantidad++;
-    } else {
+  panel.style.display = 'none';
 
-      reservaPedido.push({
-        ...item,
-        cantidad: 1
-      });
+  document.body.appendChild(panel);
+
+  /* =========================
+     BOTÓN CARRITO
+  ========================= */
+  const carritoBtn = document.createElement('button');
+
+  carritoBtn.id = 'carritoBtn';
+
+  carritoBtn.innerHTML = `
+    🛒 Ver carrito (<span id="carritoCantidad">0</span>)
+  `;
+
+  document.body.appendChild(carritoBtn);
+
+  /* =========================
+     ACTUALIZAR BOTÓN
+  ========================= */
+  function actualizarBotonCarrito() {
+
+    const cantidad =
+      document.getElementById('carritoCantidad');
+
+    if (cantidad) {
+
+      cantidad.textContent = pedido.length;
 
     }
 
-    actualizarPanelReserva();
+    carritoBtn.style.display =
+      pedido.length > 0
+        ? 'block'
+        : 'none';
 
   }
 
   /* =========================
-     PANEL RESERVA
+     ABRIR CARRITO
   ========================= */
-  function actualizarPanelReserva() {
+  carritoBtn.addEventListener('click', () => {
 
-    let panel = document.getElementById('pedidoPanel');
+    panel.style.display = 'block';
 
-    if (!panel) {
+    panel.classList.add('open');
 
-      panel = document.createElement('div');
+    carritoBtn.style.display = 'none';
 
-      panel.id = 'pedidoPanel';
+    renderPedido();
 
-      document.body.appendChild(panel);
+  });
 
-    }
+  /* =========================
+     RENDER PEDIDO
+  ========================= */
+  function renderPedido() {
 
     panel.innerHTML = `
 
-      <h3>🛒 Tu Reserva</h3>
+      <div class="pedido-header">
 
-      ${reservaPedido.map(item => `
-        <div class="pedido-item">
-          <span>${item.name} x${item.cantidad}</span>
-        </div>
-      `).join('')}
+        <h3>
+          🛒 Tu Reserva (${pedido.length})
+        </h3>
+
+        <button id="minimizarCarrito">
+          ➖
+        </button>
+
+      </div>
+
+      ${
+        pedido.length === 0
+          ? '<p>No has agregado productos.</p>'
+          : pedido.map(item => `
+              <div class="pedido-item">
+                ${item.name} x1
+              </div>
+            `).join('')
+      }
 
       <div class="cliente-form">
 
-        <input 
-          type="text" 
-          id="clienteNombre" 
-          placeholder="Nombre del cliente"
+        <input
+          type="text"
+          id="clienteNombre"
+          placeholder="Nombre completo"
         >
 
-        <input 
-          type="tel" 
-          id="clienteTelefono" 
+        <input
+          type="tel"
+          id="clienteTelefono"
           placeholder="Número telefónico"
         >
 
-        <input 
-          type="date" 
+        <input
+          type="date"
           id="clienteFecha"
         >
 
-        <input 
-          type="time" 
+        <input
+          type="time"
           id="clienteHora"
         >
 
-        <input 
-          type="number" 
-          id="clientePersonas" 
+        <input
+          type="number"
+          id="clientePersonas"
           placeholder="Cantidad de personas"
         >
 
-        <textarea 
+        <textarea
           id="clienteNotas"
-          placeholder="Notas adicionales"
+          placeholder="Notas adicionales..."
         ></textarea>
 
       </div>
@@ -357,12 +353,31 @@ document.addEventListener("DOMContentLoaded", () => {
       .getElementById('enviarWhatsapp')
       .addEventListener('click', enviarWhatsapp);
 
+    /* minimizar */
+    const minimizarBtn =
+      document.getElementById('minimizarCarrito');
+
+    minimizarBtn.addEventListener('click', () => {
+
+      panel.classList.remove('open');
+
+      panel.style.display = 'none';
+
+      carritoBtn.style.display = 'block';
+
+    });
+
   }
 
   /* =========================
      WHATSAPP
   ========================= */
   function enviarWhatsapp() {
+
+    if (pedido.length === 0) {
+      alert("Agrega productos primero");
+      return;
+    }
 
     const nombre =
       document.getElementById('clienteNombre').value;
@@ -387,44 +402,95 @@ document.addEventListener("DOMContentLoaded", () => {
 
 Quiero realizar una reserva:
 
-========================
-PRODUCTOS
-========================
 `;
 
-    reservaPedido.forEach(item => {
+    pedido.forEach(item => {
 
-      mensaje += `• ${item.cantidad}x ${item.name}\n`;
+      mensaje += `• 1x ${item.name}\n`;
 
     });
 
     mensaje += `
 
-========================
-DATOS DEL CLIENTE
-========================
-
 👤 Nombre: ${nombre}
-
 📞 Teléfono: ${telefono}
-
 📅 Fecha: ${fecha}
-
 ⏰ Hora: ${hora}
-
 👥 Personas: ${personas}
 
 📝 Notas:
 ${notas}
 `;
 
-    const mensajeCodificado =
-      encodeURIComponent(mensaje);
+    const url =
+`https://api.whatsapp.com/send/?phone=3116723728&text=${encodeURIComponent(mensaje)}&type=phone_number&app_absent=0`;
 
-    window.open(
-      `https://api.whatsapp.com/send/?phone=3116723728&text=${mensajeCodificado}&type=phone_number&app_absent=0`,
-      '_blank'
-    );
+    window.open(url, '_blank');
+
+  }
+
+  /* =========================
+     ABRIR RESERVA
+  ========================= */
+  reservaBtn.addEventListener('click', () => {
+
+    reservaPanel.style.display = 'flex';
+
+    reservaPanel.offsetHeight;
+
+    reservaPanel.classList.add('show');
+
+    renderReservaCategory('Entradas');
+
+  });
+
+  /* =========================
+     CERRAR RESERVA
+  ========================= */
+  if (closeReserva) {
+
+    closeReserva.addEventListener('click', () => {
+
+      reservaPanel.classList.remove('show');
+
+      panel.style.display = 'none';
+
+      carritoBtn.style.display = 'none';
+
+      setTimeout(() => {
+
+        reservaPanel.style.display = 'none';
+
+      }, 400);
+
+    });
+
+  }
+
+  /* =========================
+     CATEGORÍAS
+  ========================= */
+  if (reservaCategoryList) {
+
+    reservaCategoryList
+      .querySelectorAll('li')
+      .forEach(li => {
+
+        li.addEventListener('click', () => {
+
+          reservaCategoryList
+            .querySelectorAll('li')
+            .forEach(el => el.classList.remove('active'));
+
+          li.classList.add('active');
+
+          const cat = li.dataset.category;
+
+          renderReservaCategory(cat);
+
+        });
+
+      });
 
   }
 
