@@ -1,21 +1,35 @@
 /* =========================
-   RESERVA (SEGURO)
+   RESET + BASE
+========================= */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   BODY
 ========================= */
 
+
+/* =========================
+   PANEL (RESERVA)
+========================= */
 .reserva-panel {
   position: fixed;
   inset: 0;
+
   display: none;
   justify-content: center;
   align-items: center;
 
-  background: url('IMAGENES/logoclarocom.jpg') no-repeat center center;
+  background-image: url("../IMAGENES/logoclarocom.jpg");
   background-size: cover;
+  background-position: center;
 
-  z-index: 1000;
+  z-index: 999;
   opacity: 0;
   transform: translateX(-100%);
-  transition: 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .reserva-panel.show {
@@ -24,53 +38,320 @@
   transform: translateX(0);
 }
 
-/* CONTENEDOR */
-.reserva-panel .menu-container {
+/* =========================
+   CONTENEDOR
+========================= */
+.reserva-container {
   display: flex;
   width: 90%;
   max-width: 1200px;
   height: 85%;
 
-  background: url("IMAGENES/cont.jpg") center / cover no-repeat;
+  background: url("../IMAGENES/cont.jpg") center / cover no-repeat;
+
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
-  position: relative;
 }
 
-.reserva-panel .menu-container::before {
+/* overlay oscuro */
+.reserva-container::before {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.6);
+  z-index: 0;
 }
 
-.reserva-panel .menu-container > * {
+.reserva-container > * {
   position: relative;
   z-index: 1;
 }
 
-/* SIDEBAR */
-.reserva-panel .sidebar {
+/* =========================
+   SIDEBAR
+========================= */
+.reserva-sidebar {
   width: 25%;
   padding: 20px;
   overflow-y: auto;
 
-  background: url("IMAGENES/sliderofi.jpg") no-repeat center center;
+  background: url("../IMAGENES/sliderofi.jpg") no-repeat center center;
   background-size: cover;
 }
 
-/* MOBILE */
+.reserva-sidebar h3 {
+  position: sticky;
+  top: 10px;
+
+  margin: 0 10px 15px;
+  padding: 12px;
+
+  text-align: center;
+  font-size: 1rem;
+  background: #c0392b;
+  border-radius: 14px;
+}
+
+/* lista */
+.reserva-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reserva-sidebar li {
+  padding: 12px;
+  margin: 0 10px;
+  border-radius: 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reserva-sidebar li.active,
+.reserva-sidebar li:hover {
+  background: #c07f2bde;
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+.reserva-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* 🔴 CLAVE */
+.reserva-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+/* =========================
+   ITEM
+========================= */
+.item {
+  background: #222;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.item-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.item-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.no-img {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.25);
+}
+
+.item-content h4 {
+  margin: 10px 0 5px;
+}
+
+.price {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+/* botón ver */
+.ver-btn {
+  margin-top: 5px;
+  background: #e74c3c;
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.ver-btn:hover {
+  background: #c0392b;
+}
+
+/* =========================
+   BOTÓN CERRAR
+========================= */
+.reserva-close-btn {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background: black;
+  border: 2px solid white;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transform: scale(0.95);
+  transition: 0.3s;
+  z-index: 2000;
+}
+
+.modal.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-content {
+  background: #111;
+  padding: 20px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+  cursor: pointer;
+}
+/* =========================
+   RESPONSIVE MÓVIL (RESERVA)
+========================= */
 @media (max-width: 768px) {
+
+  /* =========================
+     FONDOS SOLO DEL MENÚ
+  ========================= */
 
   .reserva-panel {
     background-image: url("IMAGENES/fondopagcelcom.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
-  .reserva-panel .menu-container {
+  .reserva-container {
     background-image: url("IMAGENES/contenedorcel.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
-  .reserva-panel .sidebar {
+  .reserva-sidebar {
     background-image: url("IMAGENES/slidercel.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* =========================
+     LAYOUT
+  ========================= */
+
+  .reserva-sidebar {
+    width: 34%;
+    min-width: 34%;
+    padding: 10px;
+  }
+
+  .reserva-content {
+    width: 66%;
+    padding: 12px;
+  }
+
+  .reserva-items {
+    grid-template-columns: 1fr;
+  }
+
+  /* =========================
+     CATEGORÍAS
+  ========================= */
+
+  .reserva-sidebar h3,
+  .reserva-sidebar li {
+    margin: 0 8px 12px;
+    width: calc(100% - 16px);
+    box-sizing: border-box;
+    border-radius: 14px;
+    text-align: center;
+  }
+
+  .reserva-sidebar h3 {
+    padding: 10px 8px;
+
+    position: sticky;
+    top: 8px;
+    z-index: 20;
+
+    font-size: 0.85rem;
+    line-height: 1.1;
+
+    white-space: normal;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+  }
+
+  .reserva-sidebar li {
+    padding: 10px 8px;
+    font-size: 0.82rem;
+    line-height: 1.05;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+  .reserva-sidebar li.active {
+    font-weight: 600;
+  }
+
+  /* =========================
+     BOTÓN VOLVER
+  ========================= */
+
+  .reserva-close-btn {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    top: auto;
+
+    background: rgba(0,0,0,0.7);
+    padding: 8px 16px;
+    z-index: 9999;
   }
 }

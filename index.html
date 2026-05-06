@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NEOM Gastrobar Food & Drink</title>
 
-  <link rel="icon" type="image" href="IMAGENES/LOGO_DEFINITIVO_COM.jpg?v=41" />
-  <link rel="stylesheet" href="style.css?v=42" />
-  <link rel="stylesheet" href="CSS/reserva.css?v=42" />
+  <link rel="icon" type="image" href="IMAGENES/LOGO_DEFINITIVO_COM.jpg?v=43" />
+  <link rel="stylesheet" href="style.css?v=43" />
+  <link rel="stylesheet" href="CSS/reserva.css?v=43" />
 </head>
 <body>
   <div class="overlay"></div>
 
   <div class="container">
     <div class="logo">
-      <img src="IMAGENES/LOGO_DEFINITIVO_COM.jpg?v=42" alt="Logo Gastrobar" />
+      <img src="IMAGENES/LOGO_DEFINITIVO_COM.jpg?v=43" alt="Logo Gastrobar" />
     </div>
 
     <div class="buttons">
@@ -39,7 +39,7 @@
       <p>Síguenos</p>
       <div class="icons">
         <a href="https://www.instagram.com/neomgastrobar?igsh=MWZnemMyNTExNjY3Ng%3D%3D&utm_source=qr">
-          <img src="IMAGENES/INSTAGRAM-LG.jpg?v=42" alt="Instagram">
+          <img src="IMAGENES/INSTAGRAM-LG.jpg?v=43" alt="Instagram">
         </a>
       </div>
     </div>
@@ -87,34 +87,32 @@
     <button class="close-btn" id="closeMenu">← Volver</button>
   </div>
 
-  <!-- =========================
-       MENÚ RESERVA (INDEPENDIENTE)
-  ========================= -->
-  <div class="reserva-panel" id="reservaPanel">
-    
-    <div class="reserva-container">
+  <div class="reserva-panel menu-panel" id="reservaPanel">
 
-      <aside class="reserva-sidebar">
+    <div class="reserva-container menu-container">
+
+      <aside class="reserva-sidebar sidebar">
         <h3>CATEGORIAS</h3>
 
         <ul id="reservaCategoryList">
           <li class="active" data-category="Entradas">ENTRADAS</li>
-          
+          <li data-category="BURGERS">BURGERS</li>
+          <li data-category="HOTDOG">HOT DOG</li>
         </ul>
       </aside>
 
-      <main class="reserva-content">
+      <main class="reserva-content menu-content">
         <h2 id="reservaCategoryTitle">Entradas</h2>
-        <div class="reserva-items" id="reservaItemsContainer"></div>
+        <div class="reserva-items items" id="reservaItemsContainer"></div>
       </main>
 
     </div>
 
-    <button class="close-reserva" id="closeReserva">← Volver</button>
+    <button class="reserva-close-btn close-btn" id="closeReserva">← Volver</button>
   </div>
 
   <!-- JS -->
-  <script src="script.js?v=42"></script>
-  <script src="js/reserva.js?v=42"></script>
+  <script src="script.js?v=43"></script>
+  <script src="js/reserva.js?v=43"></script>
 </body>
 </html>
