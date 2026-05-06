@@ -6,25 +6,27 @@
   <title>NEOM Gastrobar Food & Drink</title>
 
   <link rel="icon" type="image" href="IMAGENES/LOGO_DEFINITIVO_COM.jpg?v=24" />
-  <link rel="stylesheet" href="style.css?v=38" />
+  <link rel="stylesheet" href="style.css?v=39" />
+  <link rel="stylesheet" href="CSS/reserva.css?v=39" />
 </head>
 <body>
   <div class="overlay"></div>
 
   <div class="container">
     <div class="logo">
-      <img src="IMAGENES/LOGO_DEFINITIVO_COM.jpg?v=38" alt="Logo Gastrobar" />
+      <img src="IMAGENES/LOGO_DEFINITIVO_COM.jpg?v=39" alt="Logo Gastrobar" />
     </div>
 
     <div class="buttons">
       <button class="btn" id="menuBtn">🍴 MENÚ</button>
 
+       <!-- 🔥 BOTÓN QUE ABRE EL NUEVO MENÚ -->
+      <button class="btn" id="reservaBtn">🧑‍💻 RESERVAR UNA MESA</button>
+
       <a href="https://wa.me/3116723728" target="_blank">
         <button class="btn">📦 PEDIR Y RECOGERLO EN EL RESTAURANTE</button>
       </a>
-      <a href="https://wa.me/3116723728" target="_blank">
-        <button class="btn">🧑‍💻 RESERVAR UNA MESA</button>
-      </a>
+      
       <a href="https://www.waze.com/en/live-map/directions/co/atlantico/barranquilla/cra.-46-84-143?place=ChIJ7eMu5qkt9I4RQP8j-bLLv3E" target="_blank">
         <button class="btn">📍WAZE</button>
       </a>
@@ -37,13 +39,15 @@
       <p>Síguenos</p>
       <div class="icons">
         <a href="https://www.instagram.com/neomgastrobar?igsh=MWZnemMyNTExNjY3Ng%3D%3D&utm_source=qr">
-          <img src="IMAGENES/INSTAGRAM-LG.jpg?v=38" alt="Instagram">
+          <img src="IMAGENES/INSTAGRAM-LG.jpg?v=39" alt="Instagram">
         </a>
       </div>
     </div>
   </div>
 
-  <!-- PANEL DE MENÚ -->
+  <!-- =========================
+       MENÚ ORIGINAL
+  ========================= -->
   <div class="menu-panel" id="menuPanel">
     <div class="menu-container">
       <aside class="sidebar">
@@ -83,6 +87,34 @@
     <button class="close-btn" id="closeMenu">← Volver</button>
   </div>
 
-  <script src="script.js?v=38"></script>
+  <!-- =========================
+       MENÚ RESERVA (INDEPENDIENTE)
+  ========================= -->
+  <div class="reserva-panel" id="reservaPanel">
+    
+    <div class="reserva-container">
+
+      <aside class="reserva-sidebar">
+        <h3>CATEGORIAS</h3>
+
+        <ul id="reservaCategoryList">
+          <li class="active" data-category="Entradas">ENTRADAS</li>
+          
+        </ul>
+      </aside>
+
+      <main class="reserva-content">
+        <h2 id="reservaCategoryTitle">Entradas</h2>
+        <div class="reserva-items" id="reservaItemsContainer"></div>
+      </main>
+
+    </div>
+
+    <button class="close-reserva" id="closeReserva">← Volver</button>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js?v=39"></script>
+  <script src="js/reserva.js?v=39"></script>
 </body>
 </html>
