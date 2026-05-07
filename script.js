@@ -96,7 +96,6 @@ const data = {
   ],
 
   POSTRES: [
-    { name: "Paletas Artesanales", desc: "Sabores: Chocolate, Canela, Milo.", price: "$15.000", img: "IMAGENES/paletas.jpg" },
     { name: "Cheesecake Frutos Rojos", desc: "Cremoso con compota artesanal de frutos del bosque.", price: "$18.000", img: "IMAGENES/cheesecake.jpg" }
   ],
 
