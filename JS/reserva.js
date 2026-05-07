@@ -30,30 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     Entradas: [
       {
-        name: "Entrada Premium",
-        desc: "Solo disponible en reservas",
-        price: "$50.000",
-        img: "IMAGENES/fundidoqueso.jpg"
+        name: "Combo Neom",
+        desc: "Ceviche caribeño de camarón con chips de plátano, elección de lomo ahumado, salmón al maracuyá o pollo al vino blanco, y postre de frutos rojos.",
+        price: "$63.900",
+        img: "IMAGENES/comboneom.jpg"
       }
     ],
-
-    PRUEBA: [
-      {
-        name: "Hamburguesa Especial",
-        desc: "Con queso cheddar y papas",
-        price: "$38.000",
-        img: "IMAGENES/fundidoqueso.jpg"
-      }
-    ],
-
-    PRUEBA2: [
-      {
-        name: "Hot Dog Premium",
-        desc: "Salchicha americana + bacon",
-        price: "$28.000",
-        img: "IMAGENES/fundidoqueso.jpg"
-      }
-    ]
 
   };
 
