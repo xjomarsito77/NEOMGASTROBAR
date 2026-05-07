@@ -31,7 +31,7 @@ const data = {
     { name: "Ronda De Tacos x3", desc: "Tres (3) tacos surtidos: pollo crispy con salsa de ajo; cochinita con BBQ y chipotle; y carne asada con pico de gallo.", price: "$35.000", img: "IMAGENES/tacos.jpg" },
     { name: "Mini Burger x3", desc: "Tres (3) mini hamburguesas con la receta especial del chef.", price: "$36.000", img: "IMAGENES/triomin.png" },
     { name: "Copa Ceviche Neom", desc: "Ceviche caribeño de camarón con chips de plátano", price: "$28.900", img: "IMAGENES/copaneom.jpeg" },
-    { name: "Ceviche La hoguera", desc: "Ceviche de chicharrón y chorizo con trozos de plátano maduro, cebolla en pluma y pimentones ahumados en leche de tigre, servido sobre wonton crujiente con salsa de la casa.", price: "$35.000", img: "" }
+    { name: "Ceviche La hoguera", desc: "Ceviche de chicharrón y chorizo con trozos de plátano maduro, cebolla en pluma y pimentones ahumados en leche de tigre, servido sobre wonton crujiente con salsa de la casa.", price: "$35.000", img: "IMAGENES/hoguera.jpg" }
   ],
 
   ENSALADAS: [
@@ -75,7 +75,7 @@ const data = {
     { name: "Spicy & Sweet Burger", desc: "Carne burger, mozzarella, pimentones caramelizados y salsa de la casa. Servida con papas.", price: "$45.000", img: "IMAGENES/spicy.jpg" },
     { name: "Burger Whopper", desc: "Carne burger, mozzarella apanado, cebolla caramelizada y tocineta. Servida con papas.", price: "$46.000", img: "IMAGENES/whop.jpg" },
     { name: "The Big Boss", desc: "Doble carne burger, doble queso cheddar, doble tocineta y salsa de la casa. Servida con papas.", price: "$46.000", img: "IMAGENES/hamburguesan.png" },
-    { name: "La Tentacion", desc: "Pan artesano con 150g de carne angus, queso costeño asado, patacón de maduro y tocineta ahumada, terminado con guacamole y sour cream. Acompañada de papas a la francesa.", price: "$43.900", img: "" }
+    { name: "La Tentacion", desc: "Pan artesano con 150g de carne angus, queso costeño asado, patacón de maduro y tocineta ahumada, terminado con guacamole y sour cream. Acompañada de papas a la francesa.", price: "$43.900", img: "IMAGENES/tentacion.jpg" }
   ],
 
   HOTDOG: [
